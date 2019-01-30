@@ -41,7 +41,7 @@
         <element id="Observation">
             <path value="Observation"/>
             <short value="FHIR Oxygen Saturation Profile"/>
-            <definition value="This profile defines  how to represent Oxygen Saturation observations in FHIR using a standard LOINC code and UCUM units of measure."/>
+            <definition value="This profile defines how to represent Oxygen Saturation observations in FHIR using a standard LOINC code and UCUM units of measure."/>
             <alias value="FHIR O2 saturatie-profiel"/>
             <mapping>
                 <identity value="hcim-o2saturation-v3.1-2017EN"/>
