@@ -2,7 +2,7 @@
 <StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
   <id value="Bundle-MedicationOverview"/>
   <url value="http://nictiz.nl/fhir/StructureDefinition/Bundle-MedicationOverview" />
-  <version value="2.0" />
+  <version value="2.0.0"/>
   <name value="Medication Overview response structure" />
   <status value="active" />
   <date value="2017-12-04T17:07:30.44+01:00" />
