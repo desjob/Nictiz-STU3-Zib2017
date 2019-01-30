@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<StructureDefinition xmlns="http://hl7.org/fhir">
+<?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
     <id value="zib-VaccinationRecommendation-OrderStatus"/>
     <url value="http://nictiz.nl/fhir/StructureDefinition/zib-VaccinationRecommendation-OrderStatus"/>
     <version value="2.0.0"/>
     <name value="Zib VaccinationRecommendation OrderStatus"/>
     <title value="HCIM VaccinationRecommendation OrderStatus"/>
     <status value="active"/>
+    <date value="2019-01-30"/>
     <publisher value="Nictiz"/>
     <contact>
         <name value="Nictiz"/>

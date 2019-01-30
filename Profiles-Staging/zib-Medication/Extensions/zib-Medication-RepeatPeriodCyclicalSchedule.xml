@@ -5,7 +5,8 @@
   <version value="2.0" />
   <name value="Zib Medication RepeatPeriodCyclicalSchedule" />
   <title value="HCIM Medication RepeatPeriodCyclicalSchedule" />
-  <status value="active" />
+  <status value="active"/>
+  <date value="2019-01-30"/>
   <contact>
     <name value="Nictiz" />
     <telecom>

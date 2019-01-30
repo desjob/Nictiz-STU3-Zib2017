@@ -1,10 +1,6 @@
 <?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
     <id value="zib-Encounter"/>
-    <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2018-02-28T17:26:54.056+01:00"/>
-    </meta>
     <url value="http://nictiz.nl/fhir/StructureDefinition/zib-Encounter"/>
     <version value="2.0.0"/>
     <name value="Zib Encounter"/>
