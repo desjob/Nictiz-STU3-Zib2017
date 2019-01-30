@@ -1,15 +1,12 @@
 <?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
     <id value="zib-BodyHeight"/>
-    <meta>
-        <lastUpdated value="2017-09-07T12:35:53.053+02:00"/>
-    </meta>
     <url value="http://nictiz.nl/fhir/StructureDefinition/zib-BodyHeight"/>
     <version value="2.0.0"/>
     <name value="Zib BodyHeight"/>
     <title value="HCIM BodyHeight"/>
     <status value="active"/>
-    <date value="2017-09-06T14:03:02.813+02:00"/>
+    <date value="2019-01-30"/>
     <publisher value="Nictiz"/>
     <contact>
         <name value="Nictiz"/>
@@ -38,6 +35,11 @@
         <uri value="https://zibs.nl/wiki/BodyHeight-v3.1(2017EN)"/>
         <name value="HCIM BodyHeight-v3.1(2017EN)"/>
     </mapping>
+    <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN"/>
+        <uri value="https://zibs.nl/wiki/BasicElements-v1.0(2017EN)"/>
+        <name value="HCIM BasicElements-v1.0(2017EN)"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Observation"/>
@@ -59,6 +61,14 @@
             <mapping>
                 <identity value="hcim-bodyheight-v3.1-2017EN"/>
                 <map value="NL-CM:12.2.1"/>
+            </mapping>
+        </element>
+        <element id="Observation.identifier">
+            <path value="Observation.identifier"/>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.6"/>
+                <comment value="IdentificationNumber"/>
             </mapping>
         </element>
         <element id="Observation.code">
@@ -103,6 +113,51 @@
             <path value="Observation.code.coding.code"/>
             <fixedCode value="8306-3"/>
         </element>
+        <element id="Observation.subject">
+            <path value="Observation.subject"/>
+            <short value="Patient"/>
+            <alias value="Patiënt"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient"/>
+            </type>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.11"/>
+                <comment value="Subject"/>
+            </mapping>
+        </element>
+        <element id="Observation.context">
+            <path value="Observation.context"/>
+            <short value="Encounter during which this observation is made"/>
+            <definition value="The encounter during which this journal entry was made."/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.nl/fhir/StructureDefinition/nl-core-episodeofcare"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-encounter"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/gp-Encounter"/>
+            </type>
+        </element>
         <element id="Observation.effective[x]">
             <path value="Observation.effective[x]"/>
             <short value="HeightDateTime"/>
@@ -119,6 +174,35 @@
             <mapping>
                 <identity value="hcim-bodyheight-v3.1-2017EN"/>
                 <map value="NL-CM:12.2.4"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.14"/>
+                <comment value="DateTime"/>
+            </mapping>
+        </element>
+        <element id="Observation.performer">
+            <path value="Observation.performer"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-organization"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson"/>
+            </type>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.7"/>
+                <comment value="Author"/>
             </mapping>
         </element>
         <element id="Observation.valueQuantity">
