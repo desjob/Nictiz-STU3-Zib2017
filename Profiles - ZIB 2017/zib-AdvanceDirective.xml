@@ -1,15 +1,12 @@
 <?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
     <id value="zib-AdvanceDirective"/>
-    <meta>
-        <lastUpdated value="2018-08-19T12:18:39.6788994+02:00"/>
-    </meta>
     <url value="http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective"/>
     <version value="2.0.2"/>
     <name value="Zib AdvanceDirective"/>
     <title value="HCIM AdvanceDirective"/>
     <status value="active"/>
-    <date value="2018-08-19T12:18:39.6788994+02:00"/>
+    <date value="2019-01-30"/>
     <publisher value="Nictiz"/>
     <contact>
         <name value="Nictiz"/>
@@ -37,6 +34,11 @@
         <identity value="hcim-advancedirective-v3.1-2017EN"/>
         <uri value="https://zibs.nl/wiki/AdvanceDirective-v3.1(2017EN)"/>
         <name value="HCIM AdvanceDirective-v3.1(2017EN)"/>
+    </mapping>
+    <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN"/>
+        <uri value="https://zibs.nl/wiki/BasicElements-v1.0(2017EN)"/>
+        <name value="HCIM BasicElements-v1.0(2017EN)"/>
     </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -124,6 +126,14 @@
         <element id="Consent.extension:comment.valueString:valueString">
             <path value="Consent.extension.valueString"/>
             <sliceName value="valueString"/>
+        </element>
+        <element id="Consent.identifier">
+            <path value="Consent.identifier"/>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.6"/>
+                <comment value="IdentificationNumber"/>
+            </mapping>
         </element>
         <element id="Consent.category">
             <path value="Consent.category"/>
@@ -233,6 +243,11 @@
                 <identity value="hcim-advancedirective-v3.1-2017EN"/>
                 <map value="NL-CM:7.15.7"/>
             </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.14"/>
+                <comment value="DateTime"/>
+            </mapping>
         </element>
         <element id="Consent.consentingParty">
             <path value="Consent.consentingParty"/>
@@ -255,6 +270,11 @@
             <mapping>
                 <identity value="hcim-advancedirective-v3.1-2017EN"/>
                 <map value="NL-CM:7.15.3"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.7"/>
+                <comment value="Author"/>
             </mapping>
         </element>
         <element id="Consent.actor.reference">

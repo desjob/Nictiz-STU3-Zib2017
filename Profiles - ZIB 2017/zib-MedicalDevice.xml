@@ -1,16 +1,12 @@
 <?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
     <id value="zib-MedicalDevice"/>
-    <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2018-08-19T12:18:39.6788994+02:00"/>
-    </meta>
     <url value="http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice"/>
     <version value="2.0.2"/>
     <name value="Zib MedicalDevice"/>
     <title value="HCIM MedicalDevice"/>
     <status value="active"/>
-    <date value="2018-08-19T12:18:39.6788994+02:00"/>
+    <date value="2019-01-30"/>
     <publisher value="Nictiz"/>
     <contact>
         <name value="Nictiz"/>
@@ -38,6 +34,11 @@
         <identity value="hcim-medicaldevice-v3.1-2017EN"/>
         <uri value="https://zibs.nl/wiki/MedicalDevice-v3.1(2017EN)"/>
         <name value="HCIM MedicalDevice-v3.1(2017EN)"/>
+    </mapping>
+    <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN"/>
+        <uri value="https://zibs.nl/wiki/BasicElements-v1.0(2017EN)"/>
+        <name value="HCIM BasicElements-v1.0(2017EN)"/>
     </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -120,6 +121,14 @@
                 <map value="NL-CM:10.1.9"/>
             </mapping>
         </element>
+        <element id="DeviceUseStatement.identifier">
+            <path value="DeviceUseStatement.identifier"/>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.6"/>
+                <comment value="IdentificationNumber"/>
+            </mapping>
+        </element>
         <element id="DeviceUseStatement.subject">
             <path value="DeviceUseStatement.subject"/>
             <type>
@@ -130,11 +139,21 @@
                 <code value="Reference"/>
                 <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient"/>
             </type>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.11"/>
+                <comment value="Subject"/>
+            </mapping>
         </element>
         <element id="DeviceUseStatement.whenUsed">
             <path value="DeviceUseStatement.whenUsed"/>
             <short value="Time range defined by start and end date/time"/>
             <alias value="Tijdsduur gedefinieerd door start- en einddatum/tijd"/>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.14"/>
+                <comment value="DateTime"/>
+            </mapping>
         </element>
         <element id="DeviceUseStatement.whenUsed.start">
             <path value="DeviceUseStatement.whenUsed.start"/>
@@ -152,6 +171,26 @@
             <mapping>
                 <identity value="hcim-medicaldevice-v3.1-2017EN"/>
                 <map value="NL-CM:10.1.11"/>
+            </mapping>
+        </element>
+        <element id="DeviceUseStatement.source">
+            <path value="DeviceUseStatement.source"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson"/>
+            </type>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.2"/>
+                <comment value="InformationSource"/>
             </mapping>
         </element>
         <element id="DeviceUseStatement.device">

@@ -1,15 +1,12 @@
 <?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
     <id value="nl-core-relatedperson"/>
-    <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2018-02-26T16:12:12.61+01:00"/>
-    </meta>
     <url value="http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson"/>
-    <version value="2.0"/>
+    <version value="2.0.0"/>
     <name value="nl core relatedperson"/>
     <title value="nl-core-relatedperson"/>
     <status value="active"/>
+    <date value="2019-01-30"/>
     <publisher value="HL7 Netherlands"/>
     <contact>
         <name value="Nictiz"/>
@@ -72,6 +69,11 @@
         <uri value="https://zibs.nl/wiki/Payer-v3.1(2017EN)"/>
         <name value="HCIM Payer-v3.1(2017EN)"/>
     </mapping>
+    <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN"/>
+        <uri value="https://zibs.nl/wiki/BasicElements-v1.0(2017EN)"/>
+        <name value="HCIM BasicElements-v1.0(2017EN)"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="RelatedPerson"/>
@@ -91,6 +93,21 @@
             <mapping>
                 <identity value="hcim-contactperson-v3.1-2017EN"/>
                 <map value="NL-CM:3.1.1"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.5"/>
+                <comment value="RelatedPersonAsInformationSource::ContactPerson"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.10"/>
+                <comment value="RelatedPersonAsAuthor::ContactPerson"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.13"/>
+                <comment value="RelatedPersonAsSubject::ContactPerson"/>
             </mapping>
         </element>
         <element id="RelatedPerson.extension">
@@ -136,12 +153,25 @@
                 </valueSetReference>
             </binding>
         </element>
+        <element id="RelatedPerson.identifier">
+            <path value="RelatedPerson.identifier"/>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.6"/>
+                <comment value="IdentificationNumber"/>
+            </mapping>
+        </element>
         <element id="RelatedPerson.patient">
             <path value="RelatedPerson.patient"/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient"/>
             </type>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.11"/>
+                <comment value="Subject"/>
+            </mapping>
         </element>
         <element id="RelatedPerson.relationship">
             <path value="RelatedPerson.relationship"/>
@@ -342,6 +372,14 @@
             <mapping>
                 <identity value="hcim-payer-v3.1-2017EN"/>
                 <map value="NL-CM:1.1.17"/>
+            </mapping>
+        </element>
+        <element id="RelatedPerson.period">
+            <path value="RelatedPerson.period"/>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.14"/>
+                <comment value="DateTime"/>
             </mapping>
         </element>
     </differential>

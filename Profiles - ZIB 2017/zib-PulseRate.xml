@@ -1,15 +1,12 @@
 <?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
     <id value="zib-PulseRate"/>
-    <meta>
-        <lastUpdated value="2018-07-18T12:02:17.702+02:00"/>
-    </meta>
     <url value="http://nictiz.nl/fhir/StructureDefinition/zib-PulseRate"/>
-    <version value="1.0"/>
-    <name value="Zib-PulseRate"/>
+    <version value="1.0.0"/>
+    <name value="Zib PulseRate"/>
     <title value="HCIM PulseRate"/>
     <status value="active"/>
-    <date value="2018-07-18T12:02:17.702+02:00"/>
+    <date value="2019-01-30"/>
     <publisher value="Nictiz"/>
     <contact>
         <name value="Nictiz"/>
@@ -29,6 +26,11 @@
         <name value="HCIM PulseRate-v3.1(2017EN)"/>
         <comment value="Known issue: due to missing terminology, there's no component mapping for NL-CM:12.7.5 (https://bits.nictiz.nl/projects/ZIB/issues/ZIB-689)"/>
     </mapping>
+    <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN"/>
+        <uri value="https://zibs.nl/wiki/BasicElements-v1.0(2017EN)"/>
+        <name value="HCIM BasicElements-v1.0(2017EN)"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Observation"/>
@@ -43,6 +45,14 @@
             <mapping>
                 <identity value="hcim-pulserate-v3.1-2017EN"/>
                 <map value="NL-CM:12.7.1"/>
+            </mapping>
+        </element>
+        <element id="Observation.identifier">
+            <path value="Observation.identifier"/>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.6"/>
+                <comment value="IdentificationNumber"/>
             </mapping>
         </element>
         <element id="Observation.subject">
@@ -66,6 +76,11 @@
                 <code value="Reference"/>
                 <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient"/>
             </type>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.11"/>
+                <comment value="Subject"/>
+            </mapping>
         </element>
         <element id="Observation.context">
             <path value="Observation.context"/>
@@ -75,6 +90,10 @@
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.nl/fhir/StructureDefinition/nl-core-episodeofcare"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-encounter"/>
             </type>
             <type>
                 <code value="Reference"/>
@@ -89,6 +108,11 @@
             <mapping>
                 <identity value="hcim-pulserate-v3.1-2017EN"/>
                 <map value="NL-CM:12.7.3"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.14"/>
+                <comment value="DateTime"/>
             </mapping>
         </element>
         <element id="Observation.performer">
@@ -109,6 +133,11 @@
                 <code value="Reference"/>
                 <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson"/>
             </type>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.7"/>
+                <comment value="Author"/>
+            </mapping>
         </element>
         <element id="Observation.valueQuantity:valueQuantity">
             <path value="Observation.valueQuantity"/>

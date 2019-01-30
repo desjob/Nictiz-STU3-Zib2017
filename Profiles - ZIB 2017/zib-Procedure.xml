@@ -1,16 +1,12 @@
 <?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
     <id value="zib-Procedure"/>
-    <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2018-08-19T12:18:39.6788994+02:00"/>
-    </meta>
     <url value="http://nictiz.nl/fhir/StructureDefinition/zib-Procedure"/>
     <version value="2.0.2"/>
     <name value="Zib Procedure"/>
     <title value="HCIM Procedure"/>
     <status value="active"/>
-    <date value="2018-08-19T12:18:39.6788994+02:00"/>
+    <date value="2019-01-30"/>
     <publisher value="Nictiz"/>
     <contact>
         <name value="Nictiz"/>
@@ -53,6 +49,11 @@
         <identity value="hcim-textresult-v4.1-2017EN"/>
         <uri value="https://zibs.nl/wiki/TextResult-v4.1(2017EN)"/>
         <name value="HCIM textresult-v3.0(2017EN)"/>
+    </mapping>
+    <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN"/>
+        <uri value="https://zibs.nl/wiki/BasicElements-v1.0(2017EN)"/>
+        <name value="HCIM BasicElements-v1.0(2017EN)"/>
     </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -114,6 +115,14 @@
                 <map value="NL-CM:14.1.12"/>
             </mapping>
         </element>
+        <element id="Procedure.identifier">
+            <path value="Procedure.identifier"/>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.6"/>
+                <comment value="IdentificationNumber"/>
+            </mapping>
+        </element>
         <element id="Procedure.basedOn">
             <path value="Procedure.basedOn"/>
             <slicing>
@@ -124,7 +133,7 @@
                 <rules value="open"/>
             </slicing>
         </element>
-        <element id="Procedure.basedOn:requester">
+        <element id="Procedure.basedOn:request">
             <path value="Procedure.basedOn"/>
             <sliceName value="request"/>
             <short value="ProcedureRequest"/>
@@ -199,14 +208,28 @@
                 <code value="Reference"/>
                 <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient"/>
             </type>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.11"/>
+                <comment value="Subject"/>
+            </mapping>
         </element>
-        <element id="Procedure.performedPeriod">
+        <element id="Procedure.performed[x]">
+            <path value="Procedure.performed[x]"/>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.14"/>
+                <comment value="DateTime"/>
+            </mapping>
+        </element>
+        <element id="Procedure.performed[x]:performedPeriod">
             <path value="Procedure.performedPeriod"/>
+            <sliceName value="performedPeriod"/>
             <type>
                 <code value="Period"/>
             </type>
         </element>
-        <element id="Procedure.performedPeriod.start">
+        <element id="Procedure.performed[x]:performedPeriod.start">
             <path value="Procedure.performedPeriod.start"/>
             <short value="ProcedureStartDate"/>
             <definition value="The start date (and if possible start time) of the procedure. A ‘vague’ date, such as only the year, is permitted.&#xD;&#xA;The element offers the option to indicate the start of the period of a series of related procedures."/>
@@ -224,7 +247,7 @@
                 <map value="NL-CM:14.1.2"/>
             </mapping>
         </element>
-        <element id="Procedure.performedPeriod.end">
+        <element id="Procedure.performed[x]:performedPeriod.end">
             <path value="Procedure.performedPeriod.end"/>
             <short value="ProcedureEndDate"/>
             <definition value="The end date (and if possible end time) of the procedure. A ‘vague’ date, such as only the year, is permitted.&#xD;&#xA;The element offers the option to indicate the end of the period of a series of related procedures."/>
@@ -251,6 +274,11 @@
                 </discriminator>
                 <rules value="open"/>
             </slicing>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.7"/>
+                <comment value="Author"/>
+            </mapping>
         </element>
         <element id="Procedure.performer:healthProfessional">
             <path value="Procedure.performer"/>

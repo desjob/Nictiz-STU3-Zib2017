@@ -1,16 +1,12 @@
 <?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
     <id value="zib-LaboratoryTestResult-Observation"/>
-    <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2018-01-29T13:28:44.183+01:00"/>
-    </meta>
     <url value="http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Observation"/>
-    <version value="2.0"/>
+    <version value="2.0.0"/>
     <name value="Zib LaboratoryTestResult Observation"/>
     <title value="HCIM LaboratoryTestResult Observation"/>
     <status value="active"/>
-    <date value="2017-08-11T12:22:55.327+00:00"/>
+    <date value="2019-01-30"/>
     <publisher value="Nictiz"/>
     <contact>
         <name value="Nictiz"/>
@@ -282,8 +278,8 @@
             </type>
             <mapping>
                 <identity value="hcim-basicelements-v1.0-2017EN"/>
-                <map value="NL-CM:0.0.10"/>
-                <comment value="Subject::Patient"/>
+                <map value="NL-CM:0.0.11"/>
+                <comment value="Subject"/>
             </mapping>
         </element>
         <element id="Observation.effective[x]">
