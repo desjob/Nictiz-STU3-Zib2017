@@ -3,7 +3,7 @@
         <lastUpdated value="2017-06-19T14:22:10.414+02:00"/>
     </meta>
     <url value="http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective-Treatment"/>
-    <version value="1.0"/>
+    <version value="1.0.0"/>
     <name value="Zib TreatmentDirective Treatment"/>
     <title value="HCIM TreatmentDirective Treatment"/>
     <status value="active"/>

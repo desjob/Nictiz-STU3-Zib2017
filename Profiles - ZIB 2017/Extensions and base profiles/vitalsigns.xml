@@ -10,7 +10,7 @@
         />
     </extension>
     <url value="http://nictiz.nl/fhir/StructureDefinition/zib-VitalSigns"/>
-    <version value="2.0"/>
+    <version value="2.0.0"/>
     <name value="Vital Signs Profile NL"/>
     <title value="VitalSigns Profile NL"/>
     <status value="active"/>

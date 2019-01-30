@@ -5,7 +5,7 @@
         <lastUpdated value="2017-12-11T15:30:33.29+01:00"/>
     </meta>
     <url value="http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment-OnlineEditable"/>
-    <version value="2.0"/>
+    <version value="2.0.0"/>
     <name value="eAfspraakAppointmentOnlineEditable"/>
     <title value="eAfspraak Appointment OnlineEditable"/>
     <status value="draft"/>

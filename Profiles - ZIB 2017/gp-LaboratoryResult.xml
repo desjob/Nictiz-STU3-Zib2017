@@ -5,7 +5,7 @@
         <lastUpdated value="2018-01-11T11:51:36.392+01:00"/>
     </meta>
     <url value="http://nictiz.nl/fhir/StructureDefinition/gp-LaboratoryResult"/>
-    <version value="1.0"/>
+    <version value="1.0.0"/>
     <name value="gp LaboratoryResult"/>
     <title value="gp-LaboratoryResult"/>
     <status value="active"/>

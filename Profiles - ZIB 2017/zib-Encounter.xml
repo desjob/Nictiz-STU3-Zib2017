@@ -6,7 +6,7 @@
         <lastUpdated value="2018-02-28T17:26:54.056+01:00"/>
     </meta>
     <url value="http://nictiz.nl/fhir/StructureDefinition/zib-Encounter"/>
-    <version value="2.0"/>
+    <version value="2.0.0"/>
     <name value="Zib Encounter"/>
     <title value="HCIM Encounter"/>
     <status value="active"/>
