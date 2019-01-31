@@ -36,6 +36,11 @@
         <uri value="https://zibs.nl/wiki/InstructionsForUse-v1.0(2017EN)"/>
         <name value="HCIM InstructionsForUse-v1.0(2017EN)"/>
     </mapping>
+    <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN"/>
+        <uri value="https://zibs.nl/wiki/BasicElements-v1.0(2017EN)"/>
+        <name value="HCIM BasicElements-v1.0(2017EN)"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="MedicationRequest"/>
@@ -258,10 +263,15 @@
                 <identity value="Medication-Process-v09"/>
                 <map value="mp-dataelement900-19758"/>
             </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.6"/>
+                <comment value="IdentificationNumber"/>
+            </mapping>
         </element>
         <element id="MedicationRequest.status">
             <path value="MedicationRequest.status"/>
-            <short value="CanceledIndicator "/>
+            <short value="CanceledIndicator"/>
             <definition value="A code specifying the current state of the order. Generally this will be active or completed state."/>
             <alias value="GeannuleerdIndicator"/>
             <mapping>
@@ -333,6 +343,11 @@
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group"/>
             </type>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.11"/>
+                <comment value="Subject"/>
+            </mapping>
         </element>
         <element id="MedicationRequest.supportingInformation">
             <path value="MedicationRequest.supportingInformation"/>
@@ -395,6 +410,11 @@
                 <identity value="hcim-medicationagreement-v1.0-2017EN"/>
                 <map value="NL-CM:9.6.1030"/>
                 <comment value="Mapping for agent zib-HealthProfessional (nl-core-practitioner). Element onBehalfOf may carry zib-HealthcareProvider (nl-core-organization)"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.7"/>
+                <comment value="Author"/>
             </mapping>
         </element>
         <element id="MedicationRequest.requester.extension">
@@ -528,6 +548,11 @@
             <mapping>
                 <identity value="hcim-medicationagreement-v1.0-2017EN"/>
                 <map value="NL-CM:9.6.23240"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.14"/>
+                <comment value="DateTime"/>
             </mapping>
         </element>
         <element id="MedicationRequest.dosageInstruction.dose[x]">

@@ -70,7 +70,7 @@
             </type>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/>
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-location"/>
             </type>
             <type>
                 <code value="Reference"/>
@@ -84,9 +84,6 @@
         </element>
         <element id="Observation.context">
             <path value="Observation.context"/>
-            <short value="Encounter during which this observation is made"/>
-            <definition value="The encounter during which this journal entry was made."/>
-            <min value="1"/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.nl/fhir/StructureDefinition/nl-core-episodeofcare"/>

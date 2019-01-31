@@ -7,7 +7,7 @@
     <name value="Zib MedicalDevice Product"/>
     <title value="HCIM MedicalDevice Product"/>
     <status value="active"/>
-    <date value="2017-01-13T11:58:48.3888108+01:00"/>
+    <date value="2019-01-30"/>
     <publisher value="Nictiz"/>
     <contact>
         <name value="Nictiz"/>
@@ -40,6 +40,11 @@
         <identity value="hcim-laboratorytestresultfortransfer-v4.1-2017EN"/>
         <uri value="https://zibs.nl/wiki/LaboratoryTestResult-v4.1(2017EN)"/>
         <name value="HCIM LaboratoryTestResultForTransfer-v4.1(2017EN)"/>
+    </mapping>
+    <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN"/>
+        <uri value="https://zibs.nl/wiki/BasicElements-v1.0(2017EN)"/>
+        <name value="HCIM BasicElements-v1.0(2017EN)"/>
     </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -89,6 +94,11 @@
             <mapping>
                 <identity value="hcim-medicaldevice-v3.1-2017EN"/>
                 <map value="NL-CM:10.1.4"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.6"/>
+                <comment value="IdentificationNumber"/>
             </mapping>
         </element>
         <element id="Device.identifier:serialNumber">
@@ -213,6 +223,25 @@
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient"/>
+            </type>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.11"/>
+                <comment value="Subject"/>
+            </mapping>
+        </element>
+        <element id="Device.owner">
+            <path value="Device.owner"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-organization"/>
+            </type>
+        </element>
+        <element id="Device.location">
+            <path value="Device.location"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-location"/>
             </type>
         </element>
         <element id="Device.note.text">

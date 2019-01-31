@@ -49,8 +49,7 @@
             <path value="Observation"/>
             <short value="LaboratoryTestResult"/>
             <definition
-                value="Measurements and simple assertions made about a patient, device or other subject. These may be a simple or a complex observations. Simple Observations could consist of just a code and a value, whereas complex observations like panels and batteries could have related Observations and or components.&#xD;&#xA;The HCIM LaboratoryResult also supports simple and more complex situations. For a simple result there will be a single LaboratoryTestResult.LaboratoryTest.TestName in Observation.code and no LaboratoryTestresult.Test. For a more complex situation there will be a LaboratoryTestResult.Test and any number of related LaboratoryTestResult.LaboratoryTest, e.g. parts of a panel or battery. Each related LaboratoryTest shall be conveyed in Observation.related or Observation.component. The deciding factor in choosing between related or component is: does the observation have use as independent observation (Observation.related) or is the observation only relevant in the context of its parent (Observation.component).&#xD;&#xA;Note that (textual) reports on individual (panels of) observations, like conclusions, go into a different resource DiagnosticReport. The DiagnosticReport then contains the references to the Observation resources it concerns."
-            />
+                value="Measurements and simple assertions made about a patient, device or other subject. These may be a simple or a complex observations. Simple Observations could consist of just a code and a value, whereas complex observations like panels and batteries could have related Observations and or components.&#xD;&#xA;The HCIM LaboratoryResult also supports simple and more complex situations. For a simple result there will be a single LaboratoryTestResult.LaboratoryTest.TestName in Observation.code and no LaboratoryTestresult.Test. For a more complex situation there will be a LaboratoryTestResult.Test and any number of related LaboratoryTestResult.LaboratoryTest, e.g. parts of a panel or battery. Each related LaboratoryTest shall be conveyed in Observation.related or Observation.component. The deciding factor in choosing between related or component is: does the observation have use as independent observation (Observation.related) or is the observation only relevant in the context of its parent (Observation.component).&#xD;&#xA;Note that (textual) reports on individual (panels of) observations, like conclusions, go into a different resource DiagnosticReport. The DiagnosticReport then contains the references to the Observation resources it concerns."/>
             <alias value="LaboratoriumUitslag"/>
             <mapping>
                 <identity value="hcim-laboratorytestresultfortransfer-v1.2.2-2015EN"/>
@@ -96,7 +95,7 @@
             </extension>
             <path value="Observation.status"/>
             <short value="TestUitslagStatus"/>
-            <definition value="The status of the test result of this test. If the laboratory test is an panel/cluster, the overall status is given in the status of the panel/cluster."></definition>
+            <definition value="The status of the test result of this test. If the laboratory test is an panel/cluster, the overall status is given in the status of the panel/cluster."/>
             <alias value="TestUitslagStatus"/>
         </element>
         <element id="Observation.status.extension">
@@ -270,7 +269,7 @@
             </type>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/>
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-location"/>
             </type>
             <type>
                 <code value="Reference"/>
@@ -281,6 +280,23 @@
                 <map value="NL-CM:0.0.11"/>
                 <comment value="Subject"/>
             </mapping>
+        </element>
+        <element id="Observation.context">
+            <path value="Observation.context"/>
+            <short value="Encounter during which this observation is made"/>
+            <definition value="The encounter during which this journal entry was made."/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.nl/fhir/StructureDefinition/nl-core-episodeofcare"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-encounter"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/gp-Encounter"/>
+            </type>
         </element>
         <element id="Observation.effective[x]">
             <path value="Observation.effective[x]"/>

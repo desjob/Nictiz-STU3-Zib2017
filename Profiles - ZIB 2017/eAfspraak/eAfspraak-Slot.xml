@@ -25,6 +25,11 @@
         <uri value="http://decor.nictiz.nl/art-decor/decor-datasets--eAfspraak-?id=2.16.840.1.113883.2.4.3.11.60.61.1.1"/>
         <name value="ART-DECOR Dataset eAfspraak"/>
     </mapping>
+    <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN"/>
+        <uri value="https://zibs.nl/wiki/BasicElements-v1.0(2017EN)"/>
+        <name value="HCIM BasicElements-v1.0(2017EN)"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Slot"/>
@@ -37,6 +42,11 @@
             <mapping>
                 <identity value="art-decor-eafspraak"/>
                 <map value="eafspraak-dataelement-61"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.6"/>
+                <comment value="IdentificationNumber"/>
             </mapping>
         </element>
         <element id="Slot.serviceCategory">

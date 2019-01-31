@@ -31,6 +31,11 @@
         <name value="Medication Process v09"/>
         <comment value="Language of Medication Process is Dutch."/>
     </mapping>
+    <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN"/>
+        <uri value="https://zibs.nl/wiki/BasicElements-v1.0(2017EN)"/>
+        <name value="HCIM BasicElements-v1.0(2017EN)"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="MedicationDispense"/>
@@ -73,8 +78,9 @@
                 <map value="NL-CM:9.9.20927"/>
             </mapping>
         </element>
-        <element id="MedicationDispense.extension:distributionForm.valueCodeableConcept">
+        <element id="MedicationDispense.extension:distributionForm.valueCodeableConcept:valueCodeableConcept">
             <path value="MedicationDispense.extension.valueCodeableConcept"/>
+            <sliceName value="valueCodeableConcept"/>
             <binding>
                 <strength value="extensible"/>
                 <description value="VerstrekkingDistributievormCodelijst"/>
@@ -88,7 +94,7 @@
             <path value="MedicationDispense.extension"/>
             <sliceName value="requestDate"/>
             <short value="RequestDate"/>
-            <definition value="The time at which a pharmacist records an intended dispense. "/>
+            <definition value="The time at which a pharmacist records an intended dispense."/>
             <alias value="Aanschrijfdatum"/>
             <max value="1"/>
             <type>
@@ -100,8 +106,9 @@
                 <map value="NL-CM:9.9.2250"/>
             </mapping>
         </element>
-        <element id="MedicationDispense.extension:requestDate.valueDateTime">
+        <element id="MedicationDispense.extension:requestDate.valueDateTime:valueDateTime">
             <path value="MedicationDispense.extension.valueDateTime"/>
+            <sliceName value="valueDateTime"/>
         </element>
         <element id="MedicationDispense.extension:additionalInformation">
             <path value="MedicationDispense.extension"/>
@@ -119,8 +126,9 @@
                 <map value="NL-CM:9.9.23285"/>
             </mapping>
         </element>
-        <element id="MedicationDispense.extension:additionalInformation.valueCodeableConcept">
+        <element id="MedicationDispense.extension:additionalInformation.valueCodeableConcept:valueCodeableConcept">
             <path value="MedicationDispense.extension.valueCodeableConcept"/>
+            <sliceName value="valueCodeableConcept"/>
             <example>
                 <label value="Example of DispenseAdditionalInformation"/>
                 <valueCodeableConcept>
@@ -164,6 +172,11 @@
             <mapping>
                 <identity value="Medication-Process-v09"/>
                 <map value="mp-dataelement900-20271"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.6"/>
+                <comment value="IdentificationNumber"/>
             </mapping>
         </element>
         <element id="MedicationDispense.partOf">
@@ -209,7 +222,8 @@
             <fixedString value="Dispensing medication (procedure)"/>
         </element>
         <element id="MedicationDispense.medication[x]:medicationReference">
-            <path value="MedicationDispense.medicationReference"/>
+            <path value="MedicationDispense.medication[x]"/>
+            <sliceName value="medicationReference"/>
             <short value="DispensedMedicine"/>
             <definition value="The dispensed medicine."/>
             <alias value="VerstrekGeneesmiddel"/>
@@ -232,6 +246,11 @@
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group"/>
             </type>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.11"/>
+                <comment value="Subject"/>
+            </mapping>
         </element>
         <element id="MedicationDispense.context">
             <path value="MedicationDispense.context"/>
@@ -252,6 +271,11 @@
             <mapping>
                 <identity value="hcim-dispense-v1.0-2017EN"/>
                 <map value="NL-CM:9.9.20858"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.7"/>
+                <comment value="Author"/>
             </mapping>
         </element>
         <element id="MedicationDispense.performer.actor">
@@ -324,6 +348,11 @@
             <mapping>
                 <identity value="hcim-dispense-v1.0-2017EN"/>
                 <map value="NL-CM:9.9.20272"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.14"/>
+                <comment value="DateTime"/>
             </mapping>
         </element>
         <element id="MedicationDispense.destination">

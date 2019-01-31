@@ -248,6 +248,48 @@
                 <comment value="Subject"/>
             </mapping>
         </element>
+        <element id="DiagnosticReport.context">
+            <path value="DiagnosticReport.context"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.nl/fhir/StructureDefinition/nl-core-episodeofcare"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-encounter"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/gp-Encounter"/>
+            </type>
+        </element>
+        <element id="DiagnosticReport.effective[x]">
+            <path value="DiagnosticReport.effective[x]"/>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.14"/>
+                <comment value="DateTime"/>
+            </mapping>
+        </element>
+        <element id="DiagnosticReport.performer">
+            <path value="DiagnosticReport.performer"/>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.7"/>
+                <comment value="Author"/>
+            </mapping>
+        </element>
+        <element id="DiagnosticReport.performer.actor">
+            <path value="DiagnosticReport.performer.actor"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-organization"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner"/>
+            </type>
+        </element>
         <element id="DiagnosticReport.specimen">
             <path value="DiagnosticReport.specimen"/>
             <short value="Specimen"/>

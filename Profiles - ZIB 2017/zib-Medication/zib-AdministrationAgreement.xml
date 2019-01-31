@@ -36,6 +36,11 @@
         <uri value="https://zibs.nl/wiki/InstructionsForUse-v1.0(2017EN)"/>
         <name value="HCIM InstructionsForUse-v1.0(2017EN)"/>
     </mapping>
+    <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN"/>
+        <uri value="https://zibs.nl/wiki/BasicElements-v1.0(2017EN)"/>
+        <name value="HCIM BasicElements-v1.0(2017EN)"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="MedicationDispense"/>
@@ -111,7 +116,7 @@
             <mapping>
                 <identity value="hcim-administrationagreement-v1.0-2017EN"/>
                 <map value="NL-CM:9.8.22660"/>
-                <comment value="Maps to the &quot;start date&quot; and &quot;end date&quot; portion of the &quot;PeriodOfUse&quot; element "/>
+                <comment value="Maps to the &quot;start date&quot; and &quot;end date&quot; portion of the &quot;PeriodOfUse&quot; element"/>
             </mapping>
         </element>
         <element id="MedicationDispense.extension:periodOfUse.valuePeriod:valuePeriod">
@@ -132,7 +137,7 @@
             <mapping>
                 <identity value="hcim-administrationagreement-v1.0-2017EN"/>
                 <map value="NL-CM:9.8.22660"/>
-                <comment value="Maps to the &quot;duration&quot; portion of the &quot;PeriodOfUse&quot; element "/>
+                <comment value="Maps to the &quot;duration&quot; portion of the &quot;PeriodOfUse&quot; element"/>
             </mapping>
         </element>
         <element id="MedicationDispense.extension:usageDuration.valueDuration:valueDuration">
@@ -271,6 +276,11 @@
                 <identity value="Medication-Process-v09"/>
                 <map value="mp-dataelement900-20134"/>
             </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.6"/>
+                <comment value="IdentificationNumber"/>
+            </mapping>
         </element>
         <element id="MedicationDispense.status">
             <path value="MedicationDispense.status"/>
@@ -344,6 +354,11 @@
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group"/>
             </type>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.11"/>
+                <comment value="Subject"/>
+            </mapping>
         </element>
         <element id="MedicationDispense.context">
             <path value="MedicationDispense.context"/>
@@ -365,6 +380,11 @@
                 <identity value="hcim-administrationagreement-v1.0-2017EN"/>
                 <map value="NL-CM:9.8.22097"/>
                 <comment value="For MP: Use a reference to an nl-core-organization using the actor.reference element"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.7"/>
+                <comment value="Author"/>
             </mapping>
         </element>
         <element id="MedicationDispense.performer.actor">
@@ -430,6 +450,11 @@
             <mapping>
                 <identity value="hcim-administrationagreement-v1.0-2017EN"/>
                 <map value="NL-CM:9.8.22098"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.14"/>
+                <comment value="DateTime"/>
             </mapping>
         </element>
     </differential>

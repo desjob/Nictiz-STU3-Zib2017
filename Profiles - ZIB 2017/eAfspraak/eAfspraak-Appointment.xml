@@ -6,7 +6,7 @@
     <name value="eAfspraakAppointment"/>
     <title value="eAfspraak Appointment"/>
     <status value="draft"/>
-    <date value="2017-12-04T15:40:59.783+01:00"/>
+    <date value="2019-01-30"/>
     <publisher value="Nictiz"/>
     <contact>
         <name value="Nictiz"/>
@@ -39,6 +39,11 @@
         <identity value="hcim-plannedcareactivityfortransfer-v3.1-2017EN"/>
         <uri value="https://zibs.nl/wiki/PlannedCareActivityForTransfer-v3.1(2017EN)"/>
         <name value="HCIM PlannedCareActivityForTransfer-v3.1(2017EN)"/>
+    </mapping>
+    <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN"/>
+        <uri value="https://zibs.nl/wiki/BasicElements-v1.0(2017EN)"/>
+        <name value="HCIM BasicElements-v1.0(2017EN)"/>
     </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -141,6 +146,11 @@
             <mapping>
                 <identity value="art-decor-eafspraak"/>
                 <map value="eafspraak-dataelement-3"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.6"/>
+                <comment value="IdentificationNumber"/>
             </mapping>
         </element>
         <element id="Appointment.status">
@@ -321,6 +331,11 @@
                 <identity value="hcim-plannedcareactivityfortransfer-v3.1-2017EN"/>
                 <map value="NL-CM:16.1.10"/>
             </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.14"/>
+                <comment value="DateTime"/>
+            </mapping>
         </element>
         <element id="Appointment.end">
             <path value="Appointment.end"/>
@@ -388,6 +403,16 @@
                 <identity value="art-decor-eafspraak"/>
                 <map value="eafspraak-dataelement-27"/>
             </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.7"/>
+                <comment value="Author"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.11"/>
+                <comment value="Subject"/>
+            </mapping>
         </element>
         <element id="Appointment.participant.actor">
             <path value="Appointment.participant.actor"/>
@@ -417,7 +442,7 @@
             </type>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/>
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-location"/>
             </type>
             <mapping>
                 <identity value="art-decor-eafspraak"/>

@@ -46,6 +46,11 @@
         <uri value="https://zibs.nl/wiki/PlannedCareActivityForTransfer-v3.1(2017EN)"/>
         <name value="HCIM PlannedCareActivityForTransfer-v3.1(2017EN)"/>
     </mapping>
+    <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN"/>
+        <uri value="https://zibs.nl/wiki/BasicElements-v1.0(2017EN)"/>
+        <name value="HCIM BasicElements-v1.0(2017EN)"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="MedicationAdministration"/>
@@ -192,6 +197,11 @@
                 <identity value="Medication-Process-v09"/>
                 <map value="mp-dataelement900-23036"/>
             </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.6"/>
+                <comment value="IdentificationNumber"/>
+            </mapping>
         </element>
         <element id="MedicationAdministration.status">
             <path value="MedicationAdministration.status"/>
@@ -304,6 +314,11 @@
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group"/>
             </type>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.11"/>
+                <comment value="Subject"/>
+            </mapping>
         </element>
         <element id="MedicationAdministration.supportingInformation">
             <path value="MedicationAdministration.supportingInformation"/>
@@ -380,6 +395,11 @@
                 <map value="NL-CM:16.1.11"/>
                 <comment value="EndDate"/>
             </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.14"/>
+                <comment value="DateTime"/>
+            </mapping>
         </element>
         <element id="MedicationAdministration.performer">
             <path value="MedicationAdministration.performer"/>
@@ -389,6 +409,11 @@
             <mapping>
                 <identity value="hcim-MedicationAdministration2-v1.0-2017EN"/>
                 <map value="NL-CM:9.13.21196"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-basicelements-v1.0-2017EN"/>
+                <map value="NL-CM:0.0.7"/>
+                <comment value="Author"/>
             </mapping>
         </element>
         <element id="MedicationAdministration.performer.actor">
