@@ -1,448 +1,450 @@
-<?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
-    <id value="zib-FunctionalOrMentalStatus"/>
-    <url value="http://nictiz.nl/fhir/StructureDefinition/zib-FunctionalOrMentalStatus"/>
-    <version value="2.0.0"/>
-    <name value="Zib FunctionalOrMentalStatus"/>
-    <title value="HCIM FunctionalOrMentalStatus"/>
-    <status value="active"/>
-    <date value="2019-01-30"/>
-    <publisher value="Nictiz"/>
-    <contact>
-        <name value="Nictiz"/>
-        <telecom>
-            <system value="email"/>
-            <value value="info@nictiz.nl"/>
-            <use value="work"/>
-        </telecom>
-    </contact>
-    <description value="FunctionalOrMentalStatus as defined by the Dutch Health and Care Information models (Dutch: Zorginformatiebouwsteen or ZIB) version 3.1, release 2017.&#xD;&#xA;The functional or mental status provides insight into the patient’s functional and mental limitations."/>
-    <purpose value="The patient’s functional and mental status can be recorded to provide insight into the patient’s limitations which need to be taken into account for further treatment and care and in order to evaluate the effects of a treatment.&#xD;&#xA;&#xD;&#xA;Diagnoses with (the potential for) functional limitations are not to be recorded here. To record these, please use the Problem information model."/>
-    <copyright value="CC0"/>
-    <fhirVersion value="3.0.1"/>
-    <mapping>
-        <identity value="hcim-functionalormentalstatus-v1.0.1-2015EN"/>
-        <uri value="https://zibs.nl/wiki/FunctionalOrMentalStatus-v1.0.1(2015EN)"/>
-        <name value="HCIM FunctionalOrMentalStatus-v1.0.1(2015EN)"/>
-    </mapping>
-    <mapping>
-        <identity value="hcim-functionalormentalstatus-v3.0-2016EN"/>
-        <uri value="https://zibs.nl/wiki/FunctionalOrMentalStatus-v3.0(2016EN)"/>
-        <name value="HCIM FunctionalOrMentalStatus-v3.0(2016EN)"/>
-    </mapping>
-    <mapping>
-        <identity value="hcim-functionalormentalstatus-v3.1-2017EN"/>
-        <uri value="https://zibs.nl/wiki/FunctionalOrMentalStatus-v3.1(2017EN)"/>
-        <name value="HCIM FunctionalOrMentalStatus-v3.1(2017EN)"/>
-    </mapping>
-    <mapping>
-        <identity value="hcim-basicelements-v1.0-2017EN"/>
-        <uri value="https://zibs.nl/wiki/BasicElements-v1.0(2017EN)"/>
-        <name value="HCIM BasicElements-v1.0(2017EN)"/>
-    </mapping>
-    <kind value="resource"/>
-    <abstract value="false"/>
-    <type value="Observation"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation"/>
-    <derivation value="constraint"/>
-    <differential>
-        <element id="Observation">
-            <path value="Observation"/>
-            <short value="FunctionalOrMentalStatus"/>
-            <alias value="FunctioneleOfMentaleStatus"/>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v1.0.1-2015EN"/>
-                <map value="NL-CM:4.26.1"/>
-            </mapping>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v3.0-2016EN"/>
-                <map value="NL-CM:4.26.1"/>
-            </mapping>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v3.1-2017EN"/>
-                <map value="NL-CM:4.26.1"/>
-            </mapping>
-        </element>
-        <element id="Observation.extension">
-            <path value="Observation.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Observation.extension:MedicalDevice">
-            <path value="Observation.extension"/>
-            <sliceName value="MedicalDevice"/>
-            <short value="MedicalDevice"/>
-            <definition value="Medical aid the patient has to reduce the impact of the disability or disorder."/>
-            <alias value="Hulpmiddel"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://nictiz.nl/fhir/StructureDefinition/zib-FunctionalOrMentalStatus-MedicalDevice"/>
-            </type>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v1.0.1-2015EN"/>
-                <map value="NL-CM:4.26.5"/>
-            </mapping>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v3.0-2016EN"/>
-                <map value="NL-CM:4.26.5"/>
-            </mapping>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v3.1-2017EN"/>
-                <map value="NL-CM:4.26.5"/>
-            </mapping>
-        </element>
-        
-        <element id="Observation.category">
-            <path value="Observation.category"/>
-            <comment value="Either a snomed code for functional or mental status is provided for indexing and retrieval of this this concept."/>
-            <min value="1"/>
-        </element>
-        <element id="Observation.identifier">
-            <path value="Observation.identifier"/>
-            <mapping>
-                <identity value="hcim-basicelements-v1.0-2017EN"/>
-                <map value="NL-CM:0.0.6"/>
-                <comment value="IdentificationNumber"/>
-            </mapping>
-        </element>
-        <element id="Observation.category.coding">
-            <path value="Observation.category.coding"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="code"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Observation.category.coding:FunctionalCode">
-            <path value="Observation.category.coding"/>
-            <sliceName value="functionalCode"/>
-            <short value="Functional Finding"/>
-            <definition value="Category snomed code used for indexing/retrieval of observerd functional status."/>
-            <max value="1"/>
-        </element>
-        <element id="Observation.category.coding:FunctionalCode.system">
-            <path value="Observation.category.coding.system"/>
-            <fixedUri value="http://snomed.info/sct"/>
-        </element>
-        <element id="Observation.category.coding:FunctionalCode.code">
-            <path value="Observation.category.coding.code"/>
-            <fixedCode value="118228005"/>
-        </element>
-        <element id="Observation.category.coding:FunctionalCode.display">
-            <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-                <valueBoolean value="true"/>
-            </extension>
-            <path value="Observation.category.coding.display"/>
-            <fixedString value="Functional finding (finding)"/>
-        </element>
-        <element id="Observation.category.coding:MentalCode">
-            <path value="Observation.category.coding"/>
-            <sliceName value="mentalCode"/>
-            <short value="Mental state, behavior and/or psychosocial function finding"/>
-            <definition value="Category snomed code used for indexing/retrieval of observerd mental status."/>
-            <max value="1"/>
-        </element>
-        <element id="Observation.category.coding:MentalCode.system">
-            <path value="Observation.category.coding.system"/>
-            <fixedUri value="http://snomed.info/sct"/>
-        </element>
-        <element id="Observation.category.coding:MentalCode.code">
-            <path value="Observation.category.coding.code"/>
-            <fixedCode value="384821006"/>
-        </element>
-        <element id="Observation.category.coding:MentalCode.display">
-            <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-                <valueBoolean value="true"/>
-            </extension>
-            <path value="Observation.category.coding.display"/>
-            <fixedString value="Mental state, behavior and/or psychosocial function finding (finding)"/>
-        </element>
-        <element id="Observation.code">
-            <path value="Observation.code"/>
-            <short value="StatusName"/>
-            <definition value="Coded description of the functional or mental status or limitation.&#xD;&#xA;&#xD;&#xA;Code systems used include:&#xD;&#xA;SNOMED CT&#xD;&#xA;ICF (International Classification of Functioning, Disability and Health)&#xD;&#xA;NOC (Nursing Outcomes Classification)&#xD;&#xA;OMAHA"/>
-            <alias value="StatusNaam"/>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v1.0.1-2015EN"/>
-                <map value="NL-CM:4.26.2"/>
-            </mapping>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v3.0-2016EN"/>
-                <map value="NL-CM:4.26.2"/>
-            </mapping>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v3.1-2017EN"/>
-                <map value="NL-CM:4.26.2"/>
-            </mapping>
-        </element>
-        <element id="Observation.code.coding">
-            <path value="Observation.code.coding"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="system"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Observation.code.coding:StatusNaamOMAHACodelijst">
-            <path value="Observation.code.coding"/>
-            <sliceName value="statusNaamOMAHACodelijst"/>
-            <max value="1"/>
-            <binding>
-                <strength value="required"/>
-                <description value="OMAHA (2.16.840.1.113883.6.98): All values"/>
-                <valueSetReference>
-                    <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.4.26.1--20171231000000"/>
-                    <display value="StatusNaamOMAHACodelijst"/>
-                </valueSetReference>
-            </binding>
-        </element>
-        <element id="Observation.code.coding:StatusNaamNOCCodelijst">
-            <path value="Observation.code.coding"/>
-            <sliceName value="statusNaamNOCCodelijst"/>
-            <max value="1"/>
-            <binding>
-                <strength value="required"/>
-                <description value="NOC (2.16.840.1.113883.6.16): All values"/>
-                <valueSetReference>
-                    <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.4.26.2--20171231000000"/>
-                    <display value="StatusNaamNOCCodelijst"/>
-                </valueSetReference>
-            </binding>
-        </element>
-        <element id="Observation.code.coding:StatusNaamICFCodelijst">
-            <path value="Observation.code.coding"/>
-            <sliceName value="statusNaamICFCodelijst"/>
-            <max value="1"/>
-            <binding>
-                <strength value="required"/>
-                <description value="ICF (2.16.840.1.113883.6.254): All values"/>
-                <valueSetReference>
-                    <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.4.26.3--20171231000000"/>
-                    <display value="StatusNaamICFCodelijst"/>
-                </valueSetReference>
-            </binding>
-        </element>
-        <element id="Observation.code.coding:StatusNaamSnomedCodelijst">
-            <path value="Observation.code.coding"/>
-            <sliceName value="statusNaamSnomedCodelijst"/>
-            <max value="1"/>
-            <binding>
-                <strength value="required"/>
-                <description value="SNOMED CT (2.16.840.1.113883.6.96): All values"/>
-                <valueSetReference>
-                    <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.4.26.4--20171231000000"/>
-                    <display value="StatusNaamSnomedCodelijst"/>
-                </valueSetReference>
-            </binding>
-        </element>
-        <element id="Observation.subject">
-            <path value="Observation.subject"/>
-            <short value="Patient"/>
-            <alias value="Patiënt"/>
-            <min value="1"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group"/>
-            </type>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device"/>
-            </type>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-location"/>
-            </type>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient"/>
-            </type>
-            <mapping>
-                <identity value="hcim-basicelements-v1.0-2017EN"/>
-                <map value="NL-CM:0.0.11"/>
-                <comment value="Subject"/>
-            </mapping>
-        </element>
-        <element id="Observation.context">
-            <path value="Observation.context"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.nl/fhir/StructureDefinition/nl-core-episodeofcare"/>
-            </type>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-encounter"/>
-            </type>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/gp-Encounter"/>
-            </type>
-        </element>
-        <element id="Observation.effective[x]">
-            <path value="Observation.effective[x]"/>
-            <mapping>
-                <identity value="hcim-basicelements-v1.0-2017EN"/>
-                <map value="NL-CM:0.0.14"/>
-                <comment value="DateTime"/>
-            </mapping>
-        </element>
-        <element id="Observation.effectivePeriod">
-            <path value="Observation.effectivePeriod"/>
-            <comment value="ZIB FuncntioneleOfMentaleStatus does not include an end StatusDate. The effectivePeriod.start can be used as StatusDate. This profile allows to use an end date as well."/>
-            <type>
-                <code value="Period"/>
-            </type>
-        </element>
-        <element id="Observation.effectivePeriod.start">
-            <path value="Observation.effectivePeriod.start"/>
-            <short value="StatusDate"/>
-            <definition value="Date on which the status was determined. A ‘vague’ date, such as only the year, is permitted."/>
-            <alias value="StatusDatum"/>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v1.0.1-2015EN"/>
-                <map value="NL-CM:4.26.6"/>
-            </mapping>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v3.0-2016EN"/>
-                <map value="NL-CM:4.26.6"/>
-            </mapping>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v3.1-2017EN"/>
-                <map value="NL-CM:4.26.6"/>
-            </mapping>
-        </element>
-        <element id="Observation.performer">
-            <path value="Observation.performer"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner"/>
-            </type>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-organization"/>
-            </type>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient"/>
-            </type>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson"/>
-            </type>
-            <mapping>
-                <identity value="hcim-basicelements-v1.0-2017EN"/>
-                <map value="NL-CM:0.0.7"/>
-                <comment value="Author"/>
-            </mapping>
-        </element>
-        <element id="Observation.valueCodeableConcept">
-            <path value="Observation.valueCodeableConcept"/>
-            <short value="StatusValue"/>
-            <definition value="The extent to which the patient is limited by the functional or mental condition.&#xD;&#xA;If both the status name and the status value are recorded in code, then both values must come from the same code system. If the patient uses a medical aid, the evaluation of the extent of the limitation will take place without this aid."/>
-            <alias value="StatusWaarde"/>
-            <type>
-                <code value="CodeableConcept"/>
-            </type>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v1.0.1-2015EN"/>
-                <map value="NL-CM:4.26.3"/>
-            </mapping>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v3.0-2016EN"/>
-                <map value="NL-CM:4.26.3"/>
-            </mapping>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v3.1-2017EN"/>
-                <map value="NL-CM:4.26.3"/>
-            </mapping>
-        </element>
-        <element id="Observation.valueCodeableConcept.coding">
-            <path value="Observation.valueCodeableConcept.coding"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="system"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Observation.valueCodeableConcept.coding:StatusWaardeOMAHACodelijst">
-            <path value="Observation.valueCodeableConcept.coding"/>
-            <sliceName value="statusWaardeOMAHACodelijst"/>
-            <max value="1"/>
-            <binding>
-                <strength value="required"/>
-                <description value="OMAHA (2.16.840.1.113883.6.98): All values"/>
-                <valueSetReference>
-                    <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.4.26.5--20171231000000"/>
-                    <display value="StatusWaardeOMAHACodelijst"/>
-                </valueSetReference>
-            </binding>
-        </element>
-        <element id="Observation.valueCodeableConcept.coding:StatusWaardeNOCCodelijst">
-            <path value="Observation.valueCodeableConcept.coding"/>
-            <sliceName value="statusWaardeNOCCodelijst"/>
-            <max value="1"/>
-            <binding>
-                <strength value="required"/>
-                <description value="NOC (2.16.840.1.113883.6.16): All values"/>
-                <valueSetReference>
-                    <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.4.26.7--20171231000000"/>
-                    <display value="StatusWaardeNOCCodelijst"/>
-                </valueSetReference>
-            </binding>
-        </element>
-        <element id="Observation.valueCodeableConcept.coding:StatusWaardeICFCodelijst">
-            <path value="Observation.valueCodeableConcept.coding"/>
-            <sliceName value="statusWaardeICFCodelijst"/>
-            <max value="1"/>
-            <binding>
-                <strength value="required"/>
-                <description value="ICF (2.16.840.1.113883.6.254): All values"/>
-                <valueSetReference>
-                    <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.4.26.6--20171231000000"/>
-                    <display value="StatusWaardeICFCodelijst"/>
-                </valueSetReference>
-            </binding>
-        </element>
-        <element id="Observation.valueCodeableConcept.coding:StatusWaardeSnomedCodelijst">
-            <path value="Observation.valueCodeableConcept.coding"/>
-            <sliceName value="statusWaardeSnomedCodelijst"/>
-            <max value="1"/>
-            <binding>
-                <strength value="required"/>
-                <description value="SNOMED CT (2.16.840.1.113883.6.96): All values"/>
-                <valueSetReference>
-                    <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.4.26.8--20171231000000"/>
-                    <display value="StatusWaardeSnomedCodelijst"/>
-                </valueSetReference>
-            </binding>
-        </element>
-        <element id="Observation.comment">
-            <path value="Observation.comment"/>
-            <short value="Comment"/>
-            <definition value="Explanatory comments as a description of the functional or mental status."/>
-            <alias value="Toelichting"/>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v1.0.1-2015EN"/>
-                <map value="NL-CM:4.26.4"/>
-            </mapping>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v3.0-2016EN"/>
-                <map value="NL-CM:4.26.4"/>
-            </mapping>
-            <mapping>
-                <identity value="hcim-functionalormentalstatus-v3.1-2017EN"/>
-                <map value="NL-CM:4.26.4"/>
-            </mapping>
-        </element>
-    </differential>
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="zib-FunctionalOrMentalStatus" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/zib-FunctionalOrMentalStatus" />
+  <version value="2.0.0" />
+  <name value="Zib FunctionalOrMentalStatus" />
+  <title value="HCIM FunctionalOrMentalStatus" />
+  <status value="active" />
+  <date value="2019-01-30" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="email" />
+      <value value="info@nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="FunctionalOrMentalStatus as defined by the Dutch Health and Care Information models (Dutch: Zorginformatiebouwsteen or ZIB) version 3.1, release 2017.&#xD;&#xA;The functional or mental status provides insight into the patient’s functional and mental limitations." />
+  <purpose value="The patient’s functional and mental status can be recorded to provide insight into the patient’s limitations which need to be taken into account for further treatment and care and in order to evaluate the effects of a treatment.&#xD;&#xA;&#xD;&#xA;Diagnoses with (the potential for) functional limitations are not to be recorded here. To record these, please use the Problem information model." />
+  <copyright value="CC0" />
+  <fhirVersion value="3.0.1" />
+  <mapping>
+    <identity value="hcim-functionalormentalstatus-v1.0.1-2015EN" />
+    <uri value="https://zibs.nl/wiki/FunctionalOrMentalStatus-v1.0.1(2015EN)" />
+    <name value="HCIM FunctionalOrMentalStatus-v1.0.1(2015EN)" />
+  </mapping>
+  <mapping>
+    <identity value="hcim-functionalormentalstatus-v3.0-2016EN" />
+    <uri value="https://zibs.nl/wiki/FunctionalOrMentalStatus-v3.0(2016EN)" />
+    <name value="HCIM FunctionalOrMentalStatus-v3.0(2016EN)" />
+  </mapping>
+  <mapping>
+    <identity value="hcim-functionalormentalstatus-v3.1-2017EN" />
+    <uri value="https://zibs.nl/wiki/FunctionalOrMentalStatus-v3.1(2017EN)" />
+    <name value="HCIM FunctionalOrMentalStatus-v3.1(2017EN)" />
+  </mapping>
+  <mapping>
+    <identity value="hcim-basicelements-v1.0-2017EN" />
+    <uri value="https://zibs.nl/wiki/BasicElements-v1.0(2017EN)" />
+    <name value="HCIM BasicElements-v1.0(2017EN)" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Observation" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Observation">
+      <path value="Observation" />
+      <short value="FunctionalOrMentalStatus" />
+      <alias value="FunctioneleOfMentaleStatus" />
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v1.0.1-2015EN" />
+        <map value="NL-CM:4.26.1" />
+      </mapping>
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v3.0-2016EN" />
+        <map value="NL-CM:4.26.1" />
+      </mapping>
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v3.1-2017EN" />
+        <map value="NL-CM:4.26.1" />
+      </mapping>
+    </element>
+    <element id="Observation.extension">
+      <path value="Observation.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Observation.extension:MedicalDevice">
+      <path value="Observation.extension" />
+      <sliceName value="MedicalDevice" />
+      <short value="MedicalDevice" />
+      <definition value="Medical aid the patient has to reduce the impact of the disability or disorder." />
+      <alias value="Hulpmiddel" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/zib-FunctionalOrMentalStatus-MedicalDevice" />
+      </type>
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v1.0.1-2015EN" />
+        <map value="NL-CM:4.26.5" />
+      </mapping>
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v3.0-2016EN" />
+        <map value="NL-CM:4.26.5" />
+      </mapping>
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v3.1-2017EN" />
+        <map value="NL-CM:4.26.5" />
+      </mapping>
+    </element>
+    <element id="Observation.extension:MedicalDevice.valueReference:valueReference">
+      <path value="Observation.extension.valueReference" />
+      <sliceName value="valueReference" />
+    </element>
+    <element id="Observation.identifier">
+      <path value="Observation.identifier" />
+      <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN" />
+        <map value="NL-CM:0.0.6" />
+        <comment value="IdentificationNumber" />
+      </mapping>
+    </element>
+    <element id="Observation.category">
+      <path value="Observation.category" />
+      <comment value="Either a snomed code for functional or mental status is provided for indexing and retrieval of this this concept." />
+      <min value="1" />
+    </element>
+    <element id="Observation.category.coding">
+      <path value="Observation.category.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Observation.category.coding:functionalCode">
+      <path value="Observation.category.coding" />
+      <sliceName value="functionalCode" />
+      <short value="Functional Finding" />
+      <definition value="Category snomed code used for indexing/retrieval of observerd functional status." />
+      <max value="1" />
+    </element>
+    <element id="Observation.category.coding:functionalCode.system">
+      <path value="Observation.category.coding.system" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="Observation.category.coding:functionalCode.code">
+      <path value="Observation.category.coding.code" />
+      <fixedCode value="118228005" />
+    </element>
+    <element id="Observation.category.coding:functionalCode.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Observation.category.coding.display" />
+      <fixedString value="Functional finding (finding)" />
+    </element>
+    <element id="Observation.category.coding:mentalCode">
+      <path value="Observation.category.coding" />
+      <sliceName value="mentalCode" />
+      <short value="Mental state, behavior and/or psychosocial function finding" />
+      <definition value="Category snomed code used for indexing/retrieval of observerd mental status." />
+      <max value="1" />
+    </element>
+    <element id="Observation.category.coding:mentalCode.system">
+      <path value="Observation.category.coding.system" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="Observation.category.coding:mentalCode.code">
+      <path value="Observation.category.coding.code" />
+      <fixedCode value="384821006" />
+    </element>
+    <element id="Observation.category.coding:mentalCode.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Observation.category.coding.display" />
+      <fixedString value="Mental state, behavior and/or psychosocial function finding (finding)" />
+    </element>
+    <element id="Observation.code">
+      <path value="Observation.code" />
+      <short value="StatusName" />
+      <definition value="Coded description of the functional or mental status or limitation.&#xD;&#xA;&#xD;&#xA;Code systems used include:&#xD;&#xA;SNOMED CT&#xD;&#xA;ICF (International Classification of Functioning, Disability and Health)&#xD;&#xA;NOC (Nursing Outcomes Classification)&#xD;&#xA;OMAHA" />
+      <alias value="StatusNaam" />
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v1.0.1-2015EN" />
+        <map value="NL-CM:4.26.2" />
+      </mapping>
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v3.0-2016EN" />
+        <map value="NL-CM:4.26.2" />
+      </mapping>
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v3.1-2017EN" />
+        <map value="NL-CM:4.26.2" />
+      </mapping>
+    </element>
+    <element id="Observation.code.coding">
+      <path value="Observation.code.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Observation.code.coding:statusNaamOMAHACodelijst">
+      <path value="Observation.code.coding" />
+      <sliceName value="statusNaamOMAHACodelijst" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <description value="OMAHA (2.16.840.1.113883.6.98): All values" />
+        <valueSetReference>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.4.26.1--20171231000000" />
+          <display value="StatusNaamOMAHACodelijst" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="Observation.code.coding:statusNaamNOCCodelijst">
+      <path value="Observation.code.coding" />
+      <sliceName value="statusNaamNOCCodelijst" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <description value="NOC (2.16.840.1.113883.6.16): All values" />
+        <valueSetReference>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.4.26.2--20171231000000" />
+          <display value="StatusNaamNOCCodelijst" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="Observation.code.coding:statusNaamICFCodelijst">
+      <path value="Observation.code.coding" />
+      <sliceName value="statusNaamICFCodelijst" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <description value="ICF (2.16.840.1.113883.6.254): All values" />
+        <valueSetReference>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.4.26.3--20171231000000" />
+          <display value="StatusNaamICFCodelijst" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="Observation.code.coding:statusNaamSnomedCodelijst">
+      <path value="Observation.code.coding" />
+      <sliceName value="statusNaamSnomedCodelijst" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <description value="SNOMED CT (2.16.840.1.113883.6.96): All values" />
+        <valueSetReference>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.4.26.4--20171231000000" />
+          <display value="StatusNaamSnomedCodelijst" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="Observation.subject">
+      <path value="Observation.subject" />
+      <short value="Patient" />
+      <alias value="Patiënt" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-location" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient" />
+      </type>
+      <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN" />
+        <map value="NL-CM:0.0.11" />
+        <comment value="Subject" />
+      </mapping>
+    </element>
+    <element id="Observation.context">
+      <path value="Observation.context" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.nl/fhir/StructureDefinition/nl-core-episodeofcare" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-encounter" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/gp-Encounter" />
+      </type>
+    </element>
+    <element id="Observation.effective[x]:effectivePeriod">
+      <path value="Observation.effectivePeriod" />
+      <sliceName value="effectivePeriod" />
+      <comment value="ZIB FuncntioneleOfMentaleStatus does not include an end StatusDate. The effectivePeriod.start can be used as StatusDate. This profile allows to use an end date as well." />
+      <type>
+        <code value="Period" />
+      </type>
+      <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN" />
+        <map value="NL-CM:0.0.14" />
+        <comment value="DateTime" />
+      </mapping>
+    </element>
+    <element id="Observation.effective[x]:effectivePeriod.start">
+      <path value="Observation.effectivePeriod.start" />
+      <short value="StatusDate" />
+      <definition value="Date on which the status was determined. A ‘vague’ date, such as only the year, is permitted." />
+      <alias value="StatusDatum" />
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v1.0.1-2015EN" />
+        <map value="NL-CM:4.26.6" />
+      </mapping>
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v3.0-2016EN" />
+        <map value="NL-CM:4.26.6" />
+      </mapping>
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v3.1-2017EN" />
+        <map value="NL-CM:4.26.6" />
+      </mapping>
+    </element>
+    <element id="Observation.performer">
+      <path value="Observation.performer" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-organization" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson" />
+      </type>
+      <mapping>
+        <identity value="hcim-basicelements-v1.0-2017EN" />
+        <map value="NL-CM:0.0.7" />
+        <comment value="Author" />
+      </mapping>
+    </element>
+    <element id="Observation.value[x]:valueCodeableConcept">
+      <path value="Observation.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <short value="StatusValue" />
+      <definition value="The extent to which the patient is limited by the functional or mental condition.&#xD;&#xA;If both the status name and the status value are recorded in code, then both values must come from the same code system. If the patient uses a medical aid, the evaluation of the extent of the limitation will take place without this aid." />
+      <alias value="StatusWaarde" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v1.0.1-2015EN" />
+        <map value="NL-CM:4.26.3" />
+      </mapping>
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v3.0-2016EN" />
+        <map value="NL-CM:4.26.3" />
+      </mapping>
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v3.1-2017EN" />
+        <map value="NL-CM:4.26.3" />
+      </mapping>
+    </element>
+    <element id="Observation.value[x]:valueCodeableConcept.coding">
+      <path value="Observation.valueCodeableConcept.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Observation.value[x]:valueCodeableConcept.coding:statusWaardeOMAHACodelijst">
+      <path value="Observation.valueCodeableConcept.coding" />
+      <sliceName value="statusWaardeOMAHACodelijst" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <description value="OMAHA (2.16.840.1.113883.6.98): All values" />
+        <valueSetReference>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.4.26.5--20171231000000" />
+          <display value="StatusWaardeOMAHACodelijst" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="Observation.value[x]:valueCodeableConcept.coding:statusWaardeNOCCodelijst">
+      <path value="Observation.valueCodeableConcept.coding" />
+      <sliceName value="statusWaardeNOCCodelijst" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <description value="NOC (2.16.840.1.113883.6.16): All values" />
+        <valueSetReference>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.4.26.7--20171231000000" />
+          <display value="StatusWaardeNOCCodelijst" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="Observation.value[x]:valueCodeableConcept.coding:statusWaardeICFCodelijst">
+      <path value="Observation.valueCodeableConcept.coding" />
+      <sliceName value="statusWaardeICFCodelijst" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <description value="ICF (2.16.840.1.113883.6.254): All values" />
+        <valueSetReference>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.4.26.6--20171231000000" />
+          <display value="StatusWaardeICFCodelijst" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="Observation.value[x]:valueCodeableConcept.coding:statusWaardeSnomedCodelijst">
+      <path value="Observation.valueCodeableConcept.coding" />
+      <sliceName value="statusWaardeSnomedCodelijst" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <description value="SNOMED CT (2.16.840.1.113883.6.96): All values" />
+        <valueSetReference>
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.4.26.8--20171231000000" />
+          <display value="StatusWaardeSnomedCodelijst" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="Observation.comment">
+      <path value="Observation.comment" />
+      <short value="Comment" />
+      <definition value="Explanatory comments as a description of the functional or mental status." />
+      <alias value="Toelichting" />
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v1.0.1-2015EN" />
+        <map value="NL-CM:4.26.4" />
+      </mapping>
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v3.0-2016EN" />
+        <map value="NL-CM:4.26.4" />
+      </mapping>
+      <mapping>
+        <identity value="hcim-functionalormentalstatus-v3.1-2017EN" />
+        <map value="NL-CM:4.26.4" />
+      </mapping>
+    </element>
+  </differential>
 </StructureDefinition>

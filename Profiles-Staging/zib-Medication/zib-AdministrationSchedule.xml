@@ -1,8 +1,8 @@
-<?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
-  <id value="zib-AdministrationSchedule"/>
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="zib-AdministrationSchedule" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationSchedule" />
-  <version value="2.0.0"/>
+  <version value="2.0.0" />
   <name value="Zib AdministrationSchedule" />
   <title value="HCIM AdministrationSchedule" />
   <status value="active" />
@@ -59,14 +59,16 @@
       <path value="Timing.repeat.extension" />
       <sliceName value="exact" />
       <short value="exact" />
-      <definition value="If true, indicates that the specified times, frequencies, periods are expected to be adhered to as precisely as possible. If false, indicates that a typical degree of variability based on institutional and/or patient convenience is acceptable.&#xD;&#xA;Use on data type: Timing.repeat&#xD;&#xA;&#xD;&#xA;" />
+      <definition value="If true, indicates that the specified times, frequencies, periods are expected to be adhered to as precisely as possible. If false, indicates that a typical degree of variability based on institutional and/or patient convenience is acceptable.&#xD;&#xA;Use on data type: Timing.repeat" />
       <comment value="For MP: In practice, this means that when you define a frequency (3x a day) this flag should false, but when you define an interval (every 8 hours) you set this flag to true." />
-      <min value="0" />
-      <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org/fhir/StructureDefinition/timing-exact" />
       </type>
+    </element>
+    <element id="Timing.repeat.extension:exact.url">
+      <path value="Timing.repeat.extension.url" />
+      <fixedUri value="http://hl7.org/fhir/StructureDefinition/timing-exact" />
     </element>
     <element id="Timing.repeat.bounds[x]">
       <path value="Timing.repeat.bounds[x]" />
@@ -81,7 +83,7 @@
     <element id="Timing.repeat.duration">
       <path value="Timing.repeat.duration" />
       <short value="Duration of administration" />
-      <definition value="Defines the amount of time during which medication is being administered. This is used especially in the context of administering liquids.  " />
+      <definition value="Defines the amount of time during which medication is being administered. This is used especially in the context of administering liquids." />
       <alias value="Toedieninsgduur" />
       <mapping>
         <identity value="hcim-instructionsforuse-v1.0-2017EN" />
@@ -91,7 +93,7 @@
     <element id="Timing.repeat.durationUnit">
       <path value="Timing.repeat.durationUnit" />
       <short value="Duration unit of administration" />
-      <definition value="Defines the unit for the amount of time during which medication is being administered. This is used especially in the context of administering liquids. " />
+      <definition value="Defines the unit for the amount of time during which medication is being administered. This is used especially in the context of administering liquids." />
       <alias value="Toedieninsgduur" />
       <mapping>
         <identity value="hcim-instructionsforuse-v1.0-2017EN" />
@@ -111,7 +113,7 @@
       </mapping>
       <mapping>
         <identity value="hcim-range-v1.0-2017EN" />
-        <map value="  NL-CM:20.1.2" />
+        <map value="NL-CM:20.1.2" />
         <comment value="Minimal frequency" />
       </mapping>
       <mapping>
