@@ -268,6 +268,7 @@
         </element>
         <element id="MedicationDispense.performer.actor">
             <path value="MedicationDispense.performer.actor"/>
+            <comment value="The health professional's speciality, role, and organization are captured and communicated through the PractitionerRole Resource based on the nl-core-practitionerrole profile." />
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner"/>
@@ -287,6 +288,41 @@
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson"/>
+            </type>
+        </element>
+        <element id="MedicationDispense.performer.actor.extension">
+            <path value="MedicationDispense.performer.actor.extension" />
+            <slicing>
+                <discriminator>
+                    <type value="value" />
+                    <path value="url" />
+                </discriminator>
+                <rules value="open" />
+            </slicing>
+        </element>
+        <element id="MedicationDispense.performer.actor.extension:practitionerRole-R4">
+            <path value="MedicationDispense.performer.actor.extension" />
+            <sliceName value="practitionerRole-R4" />
+            <min value="0" />
+            <max value="1" />
+            <type>
+                <code value="Extension" />
+                <profile value="http://nictiz.nl/fhir/StructureDefinition/missing-type-reference" />
+            </type>
+        </element>
+        <element id="MedicationDispense.performer.actor.extension:practitionerRole-R4.valueReference:valueReference">
+            <path value="MedicationDispense.performer.actor.extension.valueReference" />
+            <sliceName value="valueReference" />
+            <type>
+                <code value="Reference" />
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole" />
+            </type>
+        </element>
+        <element id="MedicationDispense.performer.onBehalfOf">
+            <path value="MedicationDispense.performer.onBehalfOf" />
+            <type>
+                <code value="Reference" />
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-organization" />
             </type>
         </element>
         <element id="MedicationDispense.authorizingPrescription">

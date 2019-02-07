@@ -513,6 +513,37 @@
                 <comment value="UseIndicator"/>
             </mapping>
         </element>
+        <element id="MedicationStatement.reasonNotTaken">
+            <path value="MedicationStatement.reasonNotTaken" />
+            <short value="ReasonForChangeOrDiscontinuationOfUse" />
+            <definition value="Reason for changing or discontinuing use of medication." />
+            <alias value="Reden wijzigen gebruik" />
+            <alias value="Reden stoppen gebruik" />
+            <alias value="RedenWijzigenOfStoppenGebruik" />
+            <example>
+                <label value="Example of ReasonForChangeOrDiscontinuationOfUse" />
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.113883.6.96" />
+                        <code value="79899007" />
+                        <display value="Drug interaction (disorder)" />
+                    </coding>
+                </valueCodeableConcept>
+            </example>
+            <binding>
+                <strength value="extensible" />
+                <description value="RedenMedicatieafspraak" />
+                <valueSetReference>
+                    <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.9.11.2--20171231000000" />
+                    <display value="RedenMedicatieafspraak" />
+                </valueSetReference>
+            </binding>
+            <mapping>
+                <identity value="hcim-medicationuse2-v1.0-2017EN" />
+                <map value="NL-CM:9.11.22493" />
+                <comment value="ReasonForChangeOrDiscontinuationOfUse"/>
+            </mapping>
+        </element>
         <element id="MedicationStatement.reasonCode.text">
             <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
                 <valueBoolean value="true" />

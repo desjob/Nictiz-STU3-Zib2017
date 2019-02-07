@@ -6,7 +6,7 @@
         <lastUpdated value="2018-09-18T16:39:05.96+00:00"/>
     </meta>
     <url value="http://nictiz.nl/fhir/StructureDefinition/zib-MedicationAdministration"/>
-    <version value="2.1.2"/>
+    <version value="2.2.0" />
     <name value="Zib MedicationAdministration"/>
     <title value="HCIM MedicationAdministration"/>
     <status value="active"/>
@@ -256,9 +256,9 @@
                 <comment value="OrderStatus"/>
             </mapping>
         </element>
-        <element id="MedicationAdministration.status.extension:orderStatus.valueCodeableConcept:valueCodeableConcept">
-            <path value="MedicationAdministration.status.extension.valueCodeableConcept"/>
-            <sliceName value="valueCodeableConcept"/>
+        <element id="MedicationAdministration.status.extension:orderStatus.url">
+            <path value="MedicationAdministration.status.extension.url" />
+            <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/code-specification" />
         </element>
         <element id="MedicationAdministration.category">
             <path value="MedicationAdministration.category"/>
@@ -415,6 +415,7 @@
         </element>
         <element id="MedicationAdministration.performer.actor">
             <path value="MedicationAdministration.performer.actor"/>
+            <comment value="The health professional's specialty, role, and organization are captured and communicated through the PractitionerRole Resource based on the nl-core-practitionerrole profile." />
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner"/>
@@ -446,6 +447,34 @@
                 <map value="NL-CM:9.13.23355"/>
                 <comment value="Caregiver"/>
             </mapping>
+        </element>
+        <element id="MedicationAdministration.performer.actor.extension">
+            <path value="MedicationAdministration.performer.actor.extension" />
+            <slicing>
+                <discriminator>
+                    <type value="value" />
+                    <path value="url" />
+                </discriminator>
+                <rules value="open" />
+            </slicing>
+        </element>
+        <element id="MedicationAdministration.performer.actor.extension:practitionerRole-R4">
+            <path value="MedicationAdministration.performer.actor.extension" />
+            <sliceName value="practitionerRole-R4" />
+            <min value="0" />
+            <max value="1" />
+            <type>
+                <code value="Extension" />
+                <profile value="http://nictiz.nl/fhir/StructureDefinition/missing-type-reference" />
+            </type>
+        </element>
+        <element id="MedicationAdministration.performer.actor.extension:practitionerRole-R4.valueReference:valueReference">
+            <path value="MedicationAdministration.performer.actor.extension.valueReference" />
+            <sliceName value="valueReference" />
+            <type>
+                <code value="Reference" />
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole" />
+            </type>
         </element>
         <element id="MedicationAdministration.performer.onBehalfOf">
             <path value="MedicationAdministration.performer.onBehalfOf"/>
