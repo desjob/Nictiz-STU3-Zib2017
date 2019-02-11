@@ -464,16 +464,16 @@
                 <rules value="open" />
             </slicing>
         </element>
-        <element id="MedicationRequest.requester.agent.extension:practitionerRole-R4">
+        <element id="MedicationRequest.requester.agent.extension:practitionerRoleR4">
             <path value="MedicationRequest.requester.agent.extension" />
-            <sliceName value="practitionerRole-R4" />
+            <sliceName value="practitionerRoleR4" />
             <max value="1" />
             <type>
                 <code value="Extension" />
                 <profile value="http://nictiz.nl/fhir/StructureDefinition/missing-type-reference" />
             </type>
         </element>
-        <element id="MedicationRequest.requester.agent.extension:practitionerRole-R4.valueReference:valueReference">
+        <element id="MedicationRequest.requester.agent.extension:practitionerRoleR4.valueReference:valueReference">
             <path value="MedicationRequest.requester.agent.extension.valueReference" />
             <sliceName value="valueReference" />
             <type>
@@ -505,16 +505,16 @@
                 <rules value="open" />
             </slicing>
         </element>
-        <element id="MedicationRequest.recorder.extension:practitionerRole-R4">
+        <element id="MedicationRequest.recorder.extension:practitionerRoleR4">
             <path value="MedicationRequest.recorder.extension" />
-            <sliceName value="practitionerRole-R4" />
+            <sliceName value="practitionerRoleR4" />
             <max value="1" />
             <type>
                 <code value="Extension" />
                 <profile value="http://nictiz.nl/fhir/StructureDefinition/missing-type-reference" />
             </type>
         </element>
-        <element id="MedicationRequest.recorder.extension:practitionerRole-R4.valueReference:valueReference">
+        <element id="MedicationRequest.recorder.extension:practitionerRoleR4.valueReference:valueReference">
             <path value="MedicationRequest.recorder.extension.valueReference" />
             <sliceName value="valueReference" />
             <type>

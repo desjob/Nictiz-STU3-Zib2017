@@ -428,16 +428,16 @@
                 <rules value="open" />
             </slicing>
         </element>
-        <element id="MedicationStatement.informationSource.extension:practitionerRole-R4">
+        <element id="MedicationStatement.informationSource.extension:practitionerRoleR4">
             <path value="MedicationStatement.informationSource.extension" />
-            <sliceName value="practitionerRole-R4" />
+            <sliceName value="practitionerRoleR4" />
             <max value="1" />
             <type>
                 <code value="Extension" />
                 <profile value="http://nictiz.nl/fhir/StructureDefinition/missing-type-reference" />
             </type>
         </element>
-        <element id="MedicationStatement.informationSource.extension:practitionerRole-R4.valueReference:valueReference">
+        <element id="MedicationStatement.informationSource.extension:practitionerRoleR4.valueReference:valueReference">
             <path value="MedicationStatement.informationSource.extension.valueReference" />
             <sliceName value="valueReference" />
             <type>

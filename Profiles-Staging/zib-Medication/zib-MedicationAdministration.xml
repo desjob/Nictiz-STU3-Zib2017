@@ -456,9 +456,9 @@
                 <rules value="open" />
             </slicing>
         </element>
-        <element id="MedicationAdministration.performer.actor.extension:practitionerRole-R4">
+        <element id="MedicationAdministration.performer.actor.extension:practitionerRoleR4">
             <path value="MedicationAdministration.performer.actor.extension" />
-            <sliceName value="practitionerRole-R4" />
+            <sliceName value="practitionerRoleR4" />
             <min value="0" />
             <max value="1" />
             <type>
@@ -466,7 +466,7 @@
                 <profile value="http://nictiz.nl/fhir/StructureDefinition/missing-type-reference" />
             </type>
         </element>
-        <element id="MedicationAdministration.performer.actor.extension:practitionerRole-R4.valueReference:valueReference">
+        <element id="MedicationAdministration.performer.actor.extension:practitionerRoleR4.valueReference:valueReference">
             <path value="MedicationAdministration.performer.actor.extension.valueReference" />
             <sliceName value="valueReference" />
             <type>
