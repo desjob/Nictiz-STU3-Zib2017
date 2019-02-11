@@ -356,6 +356,25 @@
         <comment value="RequestedBy" />
       </mapping>
     </element>
+    <element id="ProcedureRequest.requester.agent.extension">
+      <path value="ProcedureRequest.requester.agent.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="ProcedureRequest.requester.agent.extension:practitionerrolereference">
+      <path value="ProcedureRequest.requester.agent.extension" />
+      <sliceName value="practitionerRole" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference" />
+      </type>
+    </element>
     <element id="ProcedureRequest.performer">
       <path value="ProcedureRequest.performer" />
       <short value="CarriedOutBy" />
@@ -416,6 +435,25 @@
         <map value="NL-CM:14.1.5" />
         <comment value="Location" />
       </mapping>
+    </element>
+    <element id="ProcedureRequest.performer.extension">
+      <path value="ProcedureRequest.performer.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="ProcedureRequest.performer.extension:practitionerrolereference">
+      <path value="ProcedureRequest.performer.extension" />
+      <sliceName value="practitionerRole" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference" />
+      </type>
     </element>
     <element id="ProcedureRequest.reasonReference">
       <path value="ProcedureRequest.reasonReference" />

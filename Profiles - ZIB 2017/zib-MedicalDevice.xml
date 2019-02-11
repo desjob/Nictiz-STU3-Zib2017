@@ -166,6 +166,40 @@
                 <comment value="StartDate"/>
             </mapping>
         </element>
+        <element id="DeviceUseStatement.source">
+            <path value="DeviceUseStatement.source"/>
+            <type>
+                <code value="Reference" />
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient" />
+            </type>
+            <type>
+                <code value="Reference" />
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson" />
+            </type>
+            <type>
+                <code value="Reference" />
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner" />
+            </type>
+        </element>
+        <element id="DeviceUseStatement.source.extension">
+            <path value="DeviceUseStatement.source.extension" />
+            <slicing>
+                <discriminator>
+                    <type value="value" />
+                    <path value="url" />
+                </discriminator>
+                <rules value="open" />
+            </slicing>
+        </element>
+        <element id="DeviceUseStatement.source.extension:practitionerrolereference">
+            <path value="DeviceUseStatement.source.extension" />
+            <sliceName value="practitionerRole" />
+            <max value="1" />
+            <type>
+                <code value="Extension" />
+                <profile value="http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference" />
+            </type>
+        </element>
         <element id="DeviceUseStatement.device">
             <path value="DeviceUseStatement.device"/>
             <type>

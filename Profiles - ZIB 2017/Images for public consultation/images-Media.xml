@@ -174,39 +174,22 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Media.operator.extension:operator-R4">
+    <element id="Media.operator.extension:practitionerrolereference">
       <path value="Media.operator.extension" />
-      <sliceName value="operator-R4" />
+      <sliceName value="practitionerRole" />
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/missing-type-reference" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference" />
       </type>
     </element>
-    <element id="Media.operator.extension:operator-R4.valueReference:valueReference">
-      <path value="Media.operator.extension.valueReference" />
-      <sliceName value="valueReference" />
-      <definition value="Reference to one of the Resource types used in R4 for the operator element of Media." />
-      <comment value="This extension adds the missing references in STU3 compared to R4 and enbables a patient made image. A reference to a Practitioner does not have to be made given through this extension." />
+    <element id="Media.operator.extension:mediaoperatorpatientreference">
+      <path value="Media.operator" />
+      <sliceName value="patient" />
+      <max value="1" />
       <type>
-        <code value="Reference" />
-        <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerRole" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-organization" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceProduct" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-careteam" />
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/media-operator-patient-reference" />
       </type>
     </element>
     <element id="Media.reasonCode">
@@ -345,6 +328,25 @@
       </type>
       <type>
         <code value="string" />
+      </type>
+    </element>
+    <element id="Media.note.author[x].extension">
+      <path value="Media.note.author[x].extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Media.note.author[x].extension:practitionerrolereference">
+      <path value="Media.note.author[x].extension" />
+      <sliceName value="practitionerRole" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference" />
       </type>
     </element>
   </differential>

@@ -6,7 +6,7 @@
         <lastUpdated value="2018-08-19T12:18:39.6788994+02:00"/>
     </meta>
     <url value="http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice-Practitioner"/>
-    <version value="2.0"/>
+    <version value="2.1.0"/>
     <name value="Zib MedicalDevice Practitioner"/>
     <title value="HCIM MedicalDevice Practitioner"/>
     <status value="active"/>
@@ -52,6 +52,10 @@
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole"/>
             </type>
         </element>
     </differential>

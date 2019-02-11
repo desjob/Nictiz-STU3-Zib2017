@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="practitionerrole-reference" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference" />
+  <version value="0.2.0" />
+  <name value="PractitionerRole Reference" />
+  <title value="PractitionerRole Reference" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="email" />
+      <value value="info@nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="This extenstion adds another Reference to the Reference datatype to reference the PractitionerRole Resource type." />
+  <purpose value="There's a severe issue throughout FHIR STU3. PractitionerRole came very into being and only a few resources had been updated for it. In FHIR R4 this was fixed and all places where PractitionerRole should have been are covered. In these cases, an extension will contain the reference of the appropriate type. This leads to slight duplication: the original Reference.display will be duplicated into the Reference.extension.valueReference.display. Systems that do not know about the extension would thus still have access to the regular Reference.display." />
+  <copyright value="CC0" />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="datatype" />
+  <context value="Reference" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference" />
+    </element>
+    <element id="Extension.value[x]:valueReference">
+      <path value="Extension.valueReference" />
+      <sliceName value="valueReference" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

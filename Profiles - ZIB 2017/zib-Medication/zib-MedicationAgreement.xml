@@ -465,21 +465,13 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="MedicationRequest.requester.agent.extension:practitionerRoleR4">
+    <element id="MedicationRequest.requester.agent.extension:practitionerrolereference">
       <path value="MedicationRequest.requester.agent.extension" />
-      <sliceName value="practitionerRoleR4" />
+      <sliceName value="practitionerRole" />
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/missing-type-reference" />
-      </type>
-    </element>
-    <element id="MedicationRequest.requester.agent.extension:practitionerRoleR4.valueReference:valueReference">
-      <path value="MedicationRequest.requester.agent.extension.valueReference" />
-      <sliceName value="valueReference" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference" />
       </type>
     </element>
     <element id="MedicationRequest.requester.onBehalfOf">
@@ -506,21 +498,13 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="MedicationRequest.recorder.extension:practitionerRoleR4">
+    <element id="MedicationRequest.recorder.extension:practitionerrolereference">
       <path value="MedicationRequest.recorder.extension" />
-      <sliceName value="practitionerRoleR4" />
+      <sliceName value="practitionerRole" />
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/missing-type-reference" />
-      </type>
-    </element>
-    <element id="MedicationRequest.recorder.extension:practitionerRoleR4.valueReference:valueReference">
-      <path value="MedicationRequest.recorder.extension.valueReference" />
-      <sliceName value="valueReference" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference" />
       </type>
     </element>
     <element id="MedicationRequest.reasonCode">

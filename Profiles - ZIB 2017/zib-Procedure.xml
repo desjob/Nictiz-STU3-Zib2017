@@ -320,6 +320,25 @@
                 <comment value="Location"/>
             </mapping>
         </element>
+        <element id="Procedure.performer:healthcareProvider.extension">
+            <path value="Procedure.performer.extension" />
+            <slicing>
+                <discriminator>
+                    <type value="value" />
+                    <path value="url" />
+                </discriminator>
+                <rules value="open" />
+            </slicing>
+        </element>
+        <element id="Procedure.performer:healthcareProvider.extension:practitionerrolereference">
+            <path value="Procedure.performer.extension" />
+            <sliceName value="practitionerRole" />
+            <max value="1" />
+            <type>
+                <code value="Extension" />
+                <profile value="http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference" />
+            </type>
+        </element>
         <element id="Procedure.performer:healthcareProvider.actor">
             <path value="Procedure.performer.actor"/>
             <type>
