@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
     <id value="nl-core-questionnaireresponse"/>
-    <text>
+    <!--<text>
         <status value="generated"/>
         <div xmlns="http://www.w3.org/1999/xhtml">
             <table border="0" cellpadding="0" cellspacing="0"
@@ -619,7 +619,7 @@
                         style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px"
                         class="hierarchy"/>
                     <td
-                        style="vertical-align: top; text-alig<!--n : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px"
+                        style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px"
                         class="hierarchy">
                         <span style="opacity: 0.4">0</span>
                         <span style="opacity: 0.5">..</span>
