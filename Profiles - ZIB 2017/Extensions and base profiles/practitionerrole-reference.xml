@@ -15,8 +15,8 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="This extenstion adds another Reference to the Reference datatype to reference the PractitionerRole Resource type." />
-  <purpose value="There's a severe issue throughout FHIR STU3. PractitionerRole came very into being and only a few resources had been updated for it. In FHIR R4 this was fixed and all places where PractitionerRole should have been are covered. In these cases, an extension will contain the reference of the appropriate type. This leads to slight duplication: the original Reference.display will be duplicated into the Reference.extension.valueReference.display. Systems that do not know about the extension would thus still have access to the regular Reference.display." />
+  <description value="This extension adds the PractitionerRole to the Reference datatype where FHIR STU3 Core does not yet specify it." />
+  <purpose value="PractitionerRole allows being specific about the specialism and organization of a Practitioner. This extension leads to slight duplication: the original Reference.display will be duplicated into the Reference.extension.valueReference.display. Systems that do not know about the extension would thus still have access to the regular Reference.display. The PractitionerRole resource came into being shortly before releasing FHIR STU3 and only a few resources had been updated for it. As of FHIR R4 all relevant references for PractitionerRole are covered and this extension will no longer be required." />
   <copyright value="CC0" />
   <fhirVersion value="3.0.1" />
   <kind value="complex-type" />
