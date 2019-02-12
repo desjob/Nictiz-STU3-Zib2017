@@ -124,6 +124,7 @@
       <short value="OrderStatus" />
       <definition value="The status of the order." />
       <alias value="OrderStatus" />
+      <max value="1"/>
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/code-specification" />
