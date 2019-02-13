@@ -1,0 +1,104 @@
+<?xml-model href="http://hl7.org/fhir/STU3/conceptmap.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<ConceptMap xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/conceptmap.xsd">
+    <url value="http://nictiz.nl/fhir/ConceptMap/VerificatieStatusCodelijst-to-ConditionVerificationStatus"/>
+    <version value="1.0"/>
+    <name value="VerificatieStatusCodelijst-to-ConditionVerificationStatus"/>
+    <title value="HCIM VerificatieStatusCodelijst-to-ConditionVerificationStatus"/>
+    <status value="active"/>
+    <date value="2019-02-07"/> <!-- aanpassen -->
+    <publisher value="Nictiz"/>
+    <contact>
+        <name value="Nictiz"/>
+        <telecom>
+            <system value="email"/>
+            <value value="info@nictiz.nl"/>
+            <use value="work"/>
+        </telecom>
+    </contact>
+    <description value="Maps the HCIM Contact release 2017 terminology for ContactType to the FHIR STU3 terminology binded at Encounter.class"/> <!-- aanpassen -->
+    <purpose value="To aid in mapping from HCIM Contact value set ContactTypeCodelijst to FHIR STU3 Contact.class"/> <!-- aanpassen -->
+    <copyright value="CC0"/>
+    <sourceUri value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.5.1.4--20171231000000"/>
+    <targetUri value="http://hl7.org/fhir/ValueSet/condition-ver-status"/>
+    <group>
+        <source value="http://hl7.org/fhir/v3/ActCode"/> <!-- aanpassen -->
+        <target value="http://hl7.org/fhir/v3/ActCode"/> <!-- aanpassen -->
+        <targetVersion value="http://hl7.org/fhir/v3/ActCode version 2016-11-11"/> <!-- aanpassen -->
+        <element>
+            <code value="415684004"/>
+            <display value="Suspected"/>
+            <target>
+                <code value="provisional"/>
+                <display value="Provisional"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+        <element>
+            <code value="EMER"/>
+            <display value="Emergency"/>
+            <target>
+                <code value="EMER"/>
+                <display value="emergency"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+        <element>
+            <code value="FLD"/>
+            <display value="Field"/>
+            <target>
+                <code value="FLD"/>
+                <display value="field"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+        <element>
+            <code value="HH"/>
+            <display value="Home"/>
+            <target>
+                <code value="HH"/>
+                <display value="home"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+        <element>
+            <code value="IMP"/>
+            <display value="Inpatient"/>
+            <target>
+                <code value="IMP"/>
+                <display value="inpatient"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+        <element>
+            <code value="SS"/>
+            <display value="Short Stay"/>
+            <target>
+                <code value="SS"/>
+                <display value="short stay"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+        <element>
+            <code value="VR"/>
+            <display value="Virtual"/>
+            <target>
+                <code value="VR"/>
+                <display value="virtual"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+    </group>
+    <group>
+        <source value="http://hl7.org/fhir/v3/NullFlavor"/>
+        <target value="http://hl7.org/fhir/v3/NullFlavor"/>
+        <element>
+            <code value="OTH"/>
+            <display value="Other"/>
+            <target>
+                <code value="OTH"/>
+                <display value="Other"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+    </group>
+</ConceptMap>
