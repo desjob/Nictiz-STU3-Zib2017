@@ -680,7 +680,7 @@
       <mapping>
         <identity value="hcim-allergyintolerance-v3.2-2017EN" />
         <map value="NL-CM:8.2.14" />
-        <comment value="Severity" />
+        <comment value="Severity. See for details the ConceptMap http://nictiz.nl/fhir/ConceptMap/ErnstCodelijst-to-AllergyIntoleranceSeverity" />
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.exposureRoute">
