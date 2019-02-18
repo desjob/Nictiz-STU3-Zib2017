@@ -95,11 +95,16 @@
     </element>
     <element id="DeviceUseStatement.device">
       <path value="DeviceUseStatement.device" />
-      <comment value="Reference to a derived MedicalDevice Product (Device) profile to caputure the ProductType (NL-CM:10.1.3)."/>
+      <comment value="Reference to a derived MedicalDevice Product (Device) profile to capture the ProductType (NL-CM:10.1.3)."/>
       <type>
         <code value="Reference" />
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/zib-FeedingTubeSystem-Product" />
       </type>
+        <mapping>
+            <identity value="hcim-feedingtubesystem-v3.2-2017EN" />
+            <map value="NL-CM:10.1.3" />
+            <comment value="ProductType. HCIM MedicalDevice NL-CM:10.1.3 ProductType is overridden in HCIM FeedingTubeSystem with specific terminology 'SondeTypeCodelijst' (2.16.840.1.113883.2.4.3.11.60.40.2.10.3.1)" />
+        </mapping>
     </element>
     <element id="DeviceUseStatement.note.text">
       <path value="DeviceUseStatement.note.text" />

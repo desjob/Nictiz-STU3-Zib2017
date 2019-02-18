@@ -79,6 +79,11 @@
         <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-patient" />
         <aggregation value="bundled" />
       </type>
+        <mapping>
+            <identity value="Medication-Overview" />
+            <map value="mp-dataelement900-19798"/>
+            <comment value="Patient"/>
+        </mapping>
     </element>
     <element id="Bundle.entry:List.resource.entry:AdministrationAgreement">
       <path value="Bundle.entry.resource.entry" />
@@ -91,6 +96,11 @@
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationAgreement" />
         <aggregation value="bundled" />
       </type>
+        <mapping>
+            <identity value="Medication-Overview" />
+            <map value="mp-dataelement900-20132"/>
+            <comment value="Toedieningsafspraak"/>
+        </mapping>
     </element>
     <element id="Bundle.entry:List.resource.entry:MedicationUsage">
       <path value="Bundle.entry.resource.entry" />
@@ -103,6 +113,11 @@
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse" />
         <aggregation value="bundled" />
       </type>
+        <mapping>
+            <identity value="Medication-Overview" />
+            <map value="mp-dataelement900-21338" />
+            <comment value="MedicatieGebruik" />
+        </mapping>
     </element>
   </differential>
 </StructureDefinition>

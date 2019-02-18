@@ -435,7 +435,7 @@
             <path value="Consent.actor.reference"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceProduct"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device"/>
             </type>
             <type>
                 <code value="Reference"/>
@@ -592,7 +592,7 @@
             <path value="Consent.except.actor.reference"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceProduct"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device"/>
             </type>
             <type>
                 <code value="Reference"/>

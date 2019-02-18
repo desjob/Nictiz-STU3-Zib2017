@@ -267,6 +267,11 @@
                 <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse"/>
                 <aggregation value="bundled"/>
             </type>
+            <mapping>
+                <identity value="Medication-Overview" />
+                <map value="mp-dataelement900-21338" />
+                <comment value="MedicatieGebruik" />
+            </mapping>
         </element>
     </differential>
 </StructureDefinition>
