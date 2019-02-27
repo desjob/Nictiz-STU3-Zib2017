@@ -509,11 +509,11 @@
     </element>
     <element id="MedicationRequest.reasonCode">
       <path value="MedicationRequest.reasonCode" />
-      <short value="MedicationAgreementReason" />
+      <short value="ReasonForChangeOrDiscontinuationOfUse" />
       <definition value="Reason for this agreement. This can be the reason to start, change or stop the medication treatment." />
-      <alias value="RedenMedicatieafspraak" />
+      <alias value="RedenWijzigenOfStaken" />
       <example>
-        <label value="Example of MedicationAgreementReason" />
+        <label value="Example of MedicationAgreement ReasonForChangeOrDiscontinuationOfUse" />
         <valueCodeableConcept>
           <coding>
             <system value="urn:oid: 2.16.840.1.113883.6.96" />
@@ -524,10 +524,10 @@
       </example>
       <binding>
         <strength value="extensible" />
-        <description value="RedenMedicatieAfspraak" />
+        <description value="RedenWijzigenOfStakenCodelijst" />
         <valueSetReference>
-          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.9.6.2--20171231000000" />
-          <display value="RedenMedicatieafspraak" />
+          <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.20.77.11.21--20181218104051" />
+          <display value="RedenWijzigenOfStakenCodelijst" />
         </valueSetReference>
       </binding>
       <mapping>
