@@ -147,7 +147,26 @@
             <path value="Timing.repeat.period"/>
             <short value="Interval"/>
             <definition value="Interval indicates the time between dose times. If this is included, then the &lt;i&gt;Frequency &lt;/i&gt;will not have been included. &#xD;&#xA; &#xD;&#xA;Examples: every 4 hours, every 3 weeks. &#xD;&#xA;&#xD;&#xA;The times can now be chosen freely, but distribution throughout the day is more precise, and the interval between times is important (e.g. in the case of antibiotics) &#xD;&#xA;In the case of Baxter packs and intramural care, such a prescription is used to draw up a (location-specific) outline for distribution times (logistics)"/>
+            <comment value="In FHIR, the HCIM concepts Interval and Frequency are represented with the elements Timing.repeat.frequency, Timing.repeat.period and Timing.repeat.periodUnit."/>
             <alias value="Interval"/>
+            <alias value="Frequentie"/>
+            <mapping>
+                <identity value="hcim-instructionsforuse-v1.0-2017EN"/>
+                <map value="NL-CM:9.12.19949"/>
+                <comment value="Frequency. When frequency is used, set &#34;exact&#34; to false"/>
+            </mapping>
+            <mapping>
+                <identity value="hcim-instructionsforuse-v1.0-2017EN"/>
+                <map value="NL-CM:9.12.19950"/>
+                <comment value="Interval. When interval is used, set &#34;exact&#34; to true"/>
+            </mapping>
+        </element>
+        <element id="Timing.repeat.periodUnit">
+            <path value="Timing.repeat.periodUnit"/>
+            <definition value="Interval indicates the time between dose times. If this is included, then the &lt;i&gt;Frequency &lt;/i&gt;will not have been included. &#xD;&#xA; &#xD;&#xA;Examples: every 4 hours, every 3 weeks. &#xD;&#xA;&#xD;&#xA;The times can now be chosen freely, but distribution throughout the day is more precise, and the interval between times is important (e.g. in the case of antibiotics) &#xD;&#xA;In the case of Baxter packs and intramural care, such a prescription is used to draw up a (location-specific) outline for distribution times (logistics)"/>
+            <comment value="The unit of time for the information given in Timing.repeat.period. In FHIR, the HCIM concepts Interval and Frequency are represented with the elements Timing.repeat.frequency, Timing.repeat.period and Timing.repeat.periodUnit."/>
+            <alias value="Interval"/>
+            <alias value="Frequentie"/>
             <mapping>
                 <identity value="hcim-instructionsforuse-v1.0-2017EN"/>
                 <map value="NL-CM:9.12.19949"/>
