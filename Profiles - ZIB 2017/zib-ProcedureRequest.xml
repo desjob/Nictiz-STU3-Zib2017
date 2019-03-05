@@ -1,5 +1,5 @@
-<?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="zib-ProcedureRequest" />
   <meta>
     <versionId value="1" />
@@ -124,7 +124,7 @@
       <short value="OrderStatus" />
       <definition value="The status of the order." />
       <alias value="OrderStatus" />
-      <max value="1"/>
+      <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/code-specification" />
@@ -202,7 +202,7 @@
       </type>
       <type>
         <code value="Reference" />
-          <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
       </type>
     </element>
     <element id="ProcedureRequest.context">
@@ -367,7 +367,7 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="ProcedureRequest.requester.agent.extension:practitionerrolereference">
+    <element id="ProcedureRequest.requester.agent.extension:practitionerRole">
       <path value="ProcedureRequest.requester.agent.extension" />
       <sliceName value="practitionerRole" />
       <max value="1" />
@@ -379,7 +379,8 @@
     <element id="ProcedureRequest.performer">
       <path value="ProcedureRequest.performer" />
       <short value="CarriedOutBy" />
-      <definition value="The healthcare provider who will carrie out the procedure. In most cases, only the medical specialty is entered, and not the name of the healthcare provider or the healthcare center where the procedure will be carried out." />
+      <definition value="The healthcare provider who will carry out the procedure. In most cases, only the medical specialty is entered, and not the name of the healthcare provider or the healthcare center where the procedure will be carried out." />
+      <comment value="Note: Should a Location::HealthcareProvider with an OrganizationLocation be targeted, then this may be solved using Organization.name 'OrganizationLocation' + Organization.partOf 'HealthcareProvider'" />
       <alias value="UitgevoerdDoor" />
       <alias value="Locatie" />
       <type>
@@ -447,7 +448,7 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="ProcedureRequest.performer.extension:practitionerrolereference">
+    <element id="ProcedureRequest.performer.extension:practitionerRole">
       <path value="ProcedureRequest.performer.extension" />
       <sliceName value="practitionerRole" />
       <max value="1" />
