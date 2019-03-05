@@ -455,12 +455,12 @@
             <mapping>
                 <identity value="hcim-patient-v2.0.1-2015EN"/>
                 <map value="NL-CM:0.1.20"/>
-                <comment value="E-mailAddress"/>
+                <comment value="EmailAddress"/>
             </mapping>
             <mapping>
                 <identity value="hcim-patient-v3.0-2016EN"/>
                 <map value="NL-CM:0.1.20"/>
-                <comment value="E-mailAddress"/>
+                <comment value="EmailAddress"/>
             </mapping>
             <mapping>
                 <identity value="hcim-contactinformation-v1.0-2017EN"/>
