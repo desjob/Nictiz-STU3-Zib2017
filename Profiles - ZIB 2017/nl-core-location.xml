@@ -48,6 +48,11 @@
     <uri value="https://zibs.nl/wiki/Dispense-v1.0(2017EN)" />
     <name value="HCIM Dispense-v1.0(2017EN)" />
   </mapping>
+  <mapping>
+    <identity value="hcim-healthcareprovider-v3.1.1-2017EN" />
+    <uri value="https://zibs.nl/wiki/HealthcareProvider-v3.1.1(2017EN)" />
+    <name value="HCIM HealthcareProvider-v3.1.1(2017EN)" />
+  </mapping>
   <kind value="resource" />
   <abstract value="false" />
   <type value="Location" />
@@ -57,12 +62,19 @@
     <element id="Location.name">
       <path value="Location.name" />
       <short value="LocationName" />
+      <alias value="OrganizationLocation" />
+      <alias value="OrganisatieLocatie" />
       <alias value="DispenseLocation" />
       <alias value="Afleverlocatie" />
       <mapping>
         <identity value="hcim-dispense-v1.0-2017EN" />
         <map value="NL-CM:9.9.20925" />
         <comment value="DispenseLocation" />
+      </mapping>
+      <mapping>
+        <identity value="hcim-healthcareprovider-v3.1.1-2017EN" />
+        <map value="NL-CM:17.2.8" />
+        <comment value="OrganizationLocation" />
       </mapping>
     </element>
     <element id="Location.telecom">
@@ -258,6 +270,11 @@
         <code value="Reference" />
         <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-organization" />
       </type>
+      <mapping>
+        <identity value="hcim-healthcareprovider-v3.1.1-2017EN" />
+        <map value="NL-CM:17.2.1" />
+        <comment value="HealthcareProvider" />
+      </mapping>
     </element>
     <element id="Location.partOf">
       <path value="Location.partOf" />
