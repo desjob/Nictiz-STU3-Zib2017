@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<StructureDefinition xmlns="http://hl7.org/fhir">
+<?xml-model href="http://hl7.org/fhir/STU3/structuredefinition.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/STU3/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
   <id value="zib-BodyHeight" />
   <meta>
-    <lastUpdated value="2017-09-07T12:35:53.053+02:00" />
+    <lastUpdated value="2019-09-07T12:35:53.053+02:00" />
   </meta>
   <url value="http://nictiz.nl/fhir/StructureDefinition/zib-BodyHeight" />
   <version value="2.0" />
   <name value="Zib BodyHeight" />
   <title value="HCIM BodyHeight" />
   <status value="active" />
-  <date value="2017-09-06T14:03:02.813+02:00" />
+  <date value="2019-03-05T14:03:02.813+02:00" />
   <publisher value="Nictiz" />
   <contact>
     <name value="Nictiz" />
@@ -67,7 +67,11 @@
     </element>
     <element id="Observation.code">
       <path value="Observation.code" />
-      <definition value="Loinc code is used to specify the position of the body height measurement." />
+      <definition value="A LOINC code is used to code this observation and to specify the position of the body height measurement. 
+        The HCIM concept Position has two SNOMED codes that map to LOINC codes for this element, namely:
+        * SNOMED CT code 10904000 - Orthostatic body position (Staande positie) maps to LOINC code 8308-9.
+        * SNOMED CT code 102538003 - Recumbent body position (Liggende positie) maps to LOINC code 8306-3.      
+        " />
       <mapping>
         <identity value="hcim-bodyheight-v1.2-2015EN" />
         <map value="NL-CM:12.2.5" />
@@ -87,6 +91,7 @@
     <element id="Observation.code.coding:bodyHeightCodeStanding">
       <path value="Observation.code.coding" />
       <sliceName value="bodyHeightCodeStanding" />
+      <comment value="SNOMED CT code 10904000 - Orthostatic body position (Staande positie)	maps to this slice with LOINC code 8308-9"/>
       <max value="1" />
     </element>
     <element id="Observation.code.coding:bodyHeightCodeStanding.system">
@@ -100,6 +105,7 @@
     <element id="Observation.code.coding:bodyHeightCodeLying">
       <path value="Observation.code.coding" />
       <sliceName value="bodyHeightCodeLying" />
+      <comment value="SNOMED CT code 102538003 - Recumbent body position	(Liggende positie) maps to this slice with LOINC code 8306-3"/>
       <max value="1" />
     </element>
     <element id="Observation.code.coding:bodyHeightCodeLying.system">
