@@ -198,9 +198,6 @@
         </valueSetReference>
       </binding>
     </element>
-    <element id="AllergyIntolerance.criticality">
-      <path value="AllergyIntolerance.criticality" />
-    </element>
     <element id="AllergyIntolerance.criticality.extension">
       <path value="AllergyIntolerance.criticality.extension" />
       <slicing>
@@ -275,7 +272,7 @@
       <slicing>
         <discriminator>
           <type value="value" />
-          <path value="$this" />
+          <path value="system" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -292,6 +289,11 @@
         </valueSetReference>
       </binding>
     </element>
+    <element id="AllergyIntolerance.code.coding:causativeAgentAllergicAgentCodelist.system">
+      <path value="AllergyIntolerance.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
     <element id="AllergyIntolerance.code.coding:causativeAgentHPKCodelist">
       <path value="AllergyIntolerance.code.coding" />
       <sliceName value="causativeAgentHPKCodelist" />
@@ -303,6 +305,11 @@
           <display value="VeroorzakendeStofHPKCodelijst" />
         </valueSetReference>
       </binding>
+    </element>
+    <element id="AllergyIntolerance.code.coding:causativeAgentHPKCodelist.system">
+      <path value="AllergyIntolerance.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="urn:oid:2.16.840.1.113883.2.4.4.7" />
     </element>
     <element id="AllergyIntolerance.code.coding:causativeAgentSNKCodelist">
       <path value="AllergyIntolerance.code.coding" />
@@ -316,6 +323,11 @@
         </valueSetReference>
       </binding>
     </element>
+    <element id="AllergyIntolerance.code.coding:causativeAgentSNKCodelist.system">
+      <path value="AllergyIntolerance.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="urn:oid:2.16.840.1.113883.2.4.4.1.750" />
+    </element>
     <element id="AllergyIntolerance.code.coding:causativeAgentSSKCodelist">
       <path value="AllergyIntolerance.code.coding" />
       <sliceName value="causativeAgentSSKCodelist" />
@@ -328,6 +340,11 @@
         </valueSetReference>
       </binding>
     </element>
+    <element id="AllergyIntolerance.code.coding:causativeAgentSSKCodelist.system">
+      <path value="AllergyIntolerance.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="urn:oid:2.16.840.1.113883.2.4.4.1.725" />
+    </element>
     <element id="AllergyIntolerance.code.coding:causativeAgentThesaurus122Codelist">
       <path value="AllergyIntolerance.code.coding" />
       <sliceName value="causativeAgentThesaurus122Codelist" />
@@ -339,6 +356,11 @@
           <display value="VeroorzakendeStofThesaurus122Codelijst" />
         </valueSetReference>
       </binding>
+    </element>
+    <element id="AllergyIntolerance.code.coding:causativeAgentThesaurus122Codelist.system">
+      <path value="AllergyIntolerance.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="urn:oid:2.16.840.1.113883.2.4.4.1.902.122" />
     </element>
     <element id="AllergyIntolerance.patient">
       <path value="AllergyIntolerance.patient" />
@@ -475,6 +497,13 @@
     </element>
     <element id="AllergyIntolerance.note.author[x]">
       <path value="AllergyIntolerance.note.author[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
       <short value="Author" />
       <alias value="Auteur" />
       <type>
@@ -493,7 +522,15 @@
         <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson" />
       </type>
     </element>
-    <element id="AllergyIntolerance.note.author[x].extension">
+    <element id="AllergyIntolerance.note.author[x]:practitioner">
+      <path value="AllergyIntolerance.note.author[x]" />
+      <sliceName value="authorReference" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.note.author[x]:practitioner.extension">
       <path value="AllergyIntolerance.note.author[x].extension" />
       <slicing>
         <discriminator>
@@ -502,16 +539,17 @@
         </discriminator>
         <rules value="open" />
       </slicing>
-  </element>
-  <element id="AllergyIntolerance.note.author[x].extension:practitionerRole">
-    <path value="AllergyIntolerance.note.author[x].extension" />
-    <sliceName value="practitionerRole" />
-    <max value="1" />
-    <type>
-      <code value="Extension" />
-      <profile value="http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference" />
-    </type>
-  </element>
+    </element>
+    <element id="AllergyIntolerance.note.author[x]:practitioner.extension:practitionerRole">
+      <path value="AllergyIntolerance.note.author[x].extension" />
+      <sliceName value="practitionerRole" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference" />
+      </type>
+    </element>
     <element id="AllergyIntolerance.note.text">
       <path value="AllergyIntolerance.note.text" />
       <short value="Comment" />
@@ -579,7 +617,7 @@
       <slicing>
         <discriminator>
           <type value="value" />
-          <path value="$this" />
+          <path value="system" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -596,6 +634,11 @@
         </valueSetReference>
       </binding>
     </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:specificSubstanceAllergicAgentCodelist.system">
+      <path value="AllergyIntolerance.reaction.substance.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
     <element id="AllergyIntolerance.reaction.substance.coding:specificSubstanceHPKCodelist">
       <path value="AllergyIntolerance.reaction.substance.coding" />
       <sliceName value="specificSubstanceHPKCodelist" />
@@ -607,6 +650,11 @@
           <display value="SpecifiekeStofHPKCodelijst" />
         </valueSetReference>
       </binding>
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:specificSubstanceHPKCodelist.system">
+      <path value="AllergyIntolerance.reaction.substance.coding.system" />
+      <min value="1" />
+      <fixedUri value="urn:oid:2.16.840.1.113883.2.4.4.7" />
     </element>
     <element id="AllergyIntolerance.reaction.substance.coding:specificSubstanceSNKCodelist">
       <path value="AllergyIntolerance.reaction.substance.coding" />
@@ -620,6 +668,11 @@
         </valueSetReference>
       </binding>
     </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:specificSubstanceSNKCodelist.system">
+      <path value="AllergyIntolerance.reaction.substance.coding.system" />
+      <min value="1" />
+      <fixedUri value="urn:oid:2.16.840.1.113883.2.4.4.1.750" />
+    </element>
     <element id="AllergyIntolerance.reaction.substance.coding:specificSubstanceSSKCodelist">
       <path value="AllergyIntolerance.reaction.substance.coding" />
       <sliceName value="specificSubstanceSSKCodelist" />
@@ -632,6 +685,11 @@
         </valueSetReference>
       </binding>
     </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:specificSubstanceSSKCodelist.system">
+      <path value="AllergyIntolerance.reaction.substance.coding.system" />
+      <min value="1" />
+      <fixedUri value="urn:oid:2.16.840.1.113883.2.4.4.1.725" />
+    </element>
     <element id="AllergyIntolerance.reaction.substance.coding:specificSubstanceThesaurus122Codelist">
       <path value="AllergyIntolerance.reaction.substance.coding" />
       <sliceName value="specificSubstanceThesaurus122Codelist" />
@@ -643,6 +701,11 @@
           <display value="SpecifiekeStofThesaurus122Codelijst" />
         </valueSetReference>
       </binding>
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:specificSubstanceThesaurus122Codelist.system">
+      <path value="AllergyIntolerance.reaction.substance.coding.system" />
+      <min value="1" />
+      <fixedUri value="urn:oid:2.16.840.1.113883.2.4.4.1.902.122" />
     </element>
     <element id="AllergyIntolerance.reaction.manifestation">
       <path value="AllergyIntolerance.reaction.manifestation" />
