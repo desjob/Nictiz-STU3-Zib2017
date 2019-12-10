@@ -112,12 +112,9 @@
         <comment value="AllergyStatus. See for details the ConceptMap https://simplifier.net/resolve?target=simplifier&amp;canonical=http://nictiz.nl/fhir/ConceptMap/AllergieStatusCodelijst-to-allergy-status" />
       </mapping>
     </element>
-    <element id="AllergyIntolerance.clinicalStatus.extension:AllergieStatusCodelijst.url">
-      <path value="AllergyIntolerance.clinicalStatus.extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/code-specification" />
-    </element>
-    <element id="AllergyIntolerance.clinicalStatus.extension:AllergieStatusCodelijst.value[x]">
-      <path value="AllergyIntolerance.clinicalStatus.extension.value[x]" />
+    <element id="AllergyIntolerance.clinicalStatus.extension:AllergieStatusCodelijst.valueCodeableConcept:valueCodeableConcept">
+      <path value="AllergyIntolerance.clinicalStatus.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
       <binding>
         <strength value="extensible" />
         <description value="AllergieStatusCodelijst" />
@@ -164,12 +161,9 @@
         <comment value="AllergyCategory. See for details the ConceptMap https://simplifier.net/resolve?target=simplifier&amp;canonical=http://nictiz.nl/fhir/ConceptMap/AllergieCategorieCodelijst-to-allergy-intolerance-category" />
       </mapping>
     </element>
-    <element id="AllergyIntolerance.category.extension:AllergieCategorieCodelijst.url">
-      <path value="AllergyIntolerance.category.extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/code-specification" />
-    </element>
-    <element id="AllergyIntolerance.category.extension:AllergieCategorieCodelijst.value[x]">
-      <path value="AllergyIntolerance.category.extension.value[x]" />
+    <element id="AllergyIntolerance.category.extension:AllergieCategorieCodelijst.valueCodeableConcept:valueCodeableConcept">
+      <path value="AllergyIntolerance.category.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
       <binding>
         <strength value="extensible" />
         <description value="AllergieCategorieCodelijst" />
@@ -216,12 +210,9 @@
         <comment value="Criticality. See for details the ConceptMap https://simplifier.net/resolve?target=simplifier&amp;canonical=http://nictiz.nl/fhir/ConceptMap/MateVanKritiekZijnCodelijst-to-allergy-intolerance-criticality." />
       </mapping>
     </element>
-    <element id="AllergyIntolerance.criticality.extension:CriticalExtentCodelist.url">
-      <path value="AllergyIntolerance.criticality.extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/code-specification" />
-    </element>
-    <element id="AllergyIntolerance.criticality.extension:CriticalExtentCodelist.value[x]">
-      <path value="AllergyIntolerance.criticality.extension.value[x]" />
+    <element id="AllergyIntolerance.criticality.extension:CriticalExtentCodelist.valueCodeableConcept:valueCodeableConcept">
+      <path value="AllergyIntolerance.criticality.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
       <binding>
         <strength value="extensible" />
         <description value="CriticalExtentCodelist" />
@@ -507,7 +498,7 @@
         <targetProfile value="http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson" />
       </type>
     </element>
-    <element id="AllergyIntolerance.note.author[x]:authorReference">
+    <element id="AllergyIntolerance.note.author[x]:practitioner">
       <path value="AllergyIntolerance.note.author[x]" />
       <sliceName value="authorReference" />
       <type>
@@ -515,7 +506,7 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
       </type>
     </element>
-    <element id="AllergyIntolerance.note.author[x]:authorReference.extension">
+    <element id="AllergyIntolerance.note.author[x]:practitioner.extension">
       <path value="AllergyIntolerance.note.author[x].extension" />
       <slicing>
         <discriminator>
@@ -525,9 +516,10 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="AllergyIntolerance.note.author[x]:authorReference.extension:practitionerRole">
+    <element id="AllergyIntolerance.note.author[x]:practitioner.extension:practitionerRole">
       <path value="AllergyIntolerance.note.author[x].extension" />
       <sliceName value="practitionerRole" />
+      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
