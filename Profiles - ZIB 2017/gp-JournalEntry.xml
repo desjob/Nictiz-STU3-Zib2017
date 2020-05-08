@@ -161,11 +161,20 @@
       <type>
         <code value="CodeableConcept" />
       </type>
-      <fixedCodeableConcept>
-        <coding>
-          <system value="http://hl7.org/fhir/sid/icpc-1-nl" />
-        </coding>
-      </fixedCodeableConcept>
+    </element>
+    <element id="Observation.component:ICPC_S.value[x]:valueCodeableConcept.coding">
+      <path value="Observation.component.valueCodeableConcept.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:ICPC_S.value[x]:valueCodeableConcept.coding.system">
+      <path value="Observation.component.valueCodeableConcept.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/sid/icpc-1-nl" />
+    </element>
+    <element id="Observation.component:ICPC_S.value[x]:valueCodeableConcept.coding.code">
+      <path value="Observation.component.valueCodeableConcept.coding.code" />
+      <min value="1" />
     </element>
     <element id="Observation.component:ICPC_E">
       <path value="Observation.component" />
@@ -190,11 +199,20 @@
       <type>
         <code value="CodeableConcept" />
       </type>
-      <fixedCodeableConcept>
-        <coding>
-          <system value="http://hl7.org/fhir/sid/icpc-1-nl" />
-        </coding>
-      </fixedCodeableConcept>
+    </element>
+    <element id="Observation.component:ICPC_E.value[x]:valueCodeableConcept.coding">
+      <path value="Observation.component.valueCodeableConcept.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:ICPC_E.value[x]:valueCodeableConcept.coding.system">
+      <path value="Observation.component.valueCodeableConcept.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org/fhir/sid/icpc-1-nl" />
+    </element>
+    <element id="Observation.component:ICPC_E.value[x]:valueCodeableConcept.coding.code">
+      <path value="Observation.component.valueCodeableConcept.coding.code" />
+      <min value="1" />
     </element>
   </differential>
 </StructureDefinition>
